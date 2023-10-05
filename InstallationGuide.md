@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Neovim Setup Guide</title>
-</head>
 <body>
 <h1>Neovim Setup Guide</h1>
+<p>Welcome to the Neovim Setup Guide! This guide will help you set up Neovim on your system and configure essential plugins for a productive coding environment.</p>
 
 <h2>Windows Subsystem for Linux (WSL) Setup:</h2>
 <ul>
