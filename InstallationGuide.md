@@ -75,5 +75,15 @@
         <code>pip3 install jedi</code>
     </li>
 </ul>
+
+<h2>Misc Installation:</h2>
+<ul>
+    <li>Install Copy and Paste configuration:
+        <code>sudo apt install xsel (Installation for Copy and Paste outside of Neovim) </code>
+    </li>
+    <li>Usage:
+        <code>"+y</code> inside Neovim, and then standard Ctrl+V outside of Neovim
+    </li>
+</ul>
 </body>
 </html>
