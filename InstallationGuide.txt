@@ -1,0 +1,42 @@
+Powershell:
+    Enable The Windows Subsystem For Linux (WSL):
+        - dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+    Enable Virtual Machine Platform:
+        - dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+    Set WSL To Use WSL2:
+        - wsl --set-default-version 2
+
+    Install The Debian Linux Distribution:
+        - wsl --install -d Debian
+
+    Check The Status Of WSL And List Installed Distributions With Verbose Output:
+        - wsl --list --verbose
+
+
+Install Neovim:
+    - sudo apt install neovim
+
+Paste Command:
+    - :set paste (Shift + Right-Click)
+
+Vim-Plug Installation:
+    vim-plug install (https://github.com/junegunn/vim-plug):
+        - sudo apt install curl
+        - sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+GIT Installation
+    - sudo apt install git
+
+Plug 'https://github.com/neoclide/coc.nvim " Auto Completion (Bug Fix)
+    - sudo apt install npm
+    - node and yarn install through chocolatey 
+    - yarn install under coc.nvim under the "plugged" folder
+    - yarn build under the coc.nvim under the "plugged" folder
+    - sudo apt install nodejs
+
+Conqueror Of Completion (Python installation)
+    - CocInstall coc-python (Python module)
+    - sudo apt install python3-pip
+    - pip3 install jedi
