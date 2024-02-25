@@ -1,45 +1,82 @@
--- Set line numbers, relative numbers, and auto-indentation
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.autoindent = true
+require('packer').startup(function()
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
--- Set tab and indentation settings
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.smarttab = true
-vim.o.softtabstop = 4
+  -- Theme
+  use 'morhetz/gruvbox'
 
--- Enable mouse support
-vim.o.mouse = 'a'
+  -- Neo-Tree
+  use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = { 
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  }
 
--- Initialize Vim-Plug
-vim.cmd([[call plug#begin('~/.config/nvim/plugged')]])
+  -- Vim-Airline for status/tabline
+  use 'vim-airline/vim-airline'
 
--- List of your plugins
-vim.cmd([[Plug 'tpope/vim-surround']])
-vim.cmd([[Plug 'preservim/nerdtree']])
-vim.cmd([[Plug 'tpope/vim-commentary']])
-vim.cmd([[Plug 'vim-airline/vim-airline']])
-vim.cmd([[Plug 'ap/vim-css-color']])
-vim.cmd([[Plug 'nightsense/carbonized']])
-vim.cmd([[Plug 'ryanoasis/vim-devicons']])
-vim.cmd([[Plug 'tc50cal/vim-terminal']])
-vim.cmd([[Plug 'preservim/tagbar']])
-vim.cmd([[Plug 'neoclide/coc.nvim']])
+  -- Fugitive for Git integration
+  use 'tpope/vim-fugitive'
 
--- End Vim-Plug
-vim.cmd([[call plug#end()]])
+  -- ALE for linting and syntax checking
+  use 'dense-analysis/ale'
 
--- Key mappings
-vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<F8>', ':TagbarToggle<CR>', { noremap = true })
+  -- Coc.nvim for autocompletion, using the release branch
+  use {'neoclide/coc.nvim', branch = 'release'}
 
--- Configure NERDTree arrows
-vim.g.NERDTreeDirArrowExpandable = '+'
-vim.g.NERDTreeDirArrowCollapsible = '~'
+  -- Vim-polyglot for enhanced syntax highlighting
+  use 'sheerun/vim-polyglot'
+end)
 
--- Disable preview for completion
-vim.o.completeopt = vim.o.completeopt:gsub('preview,', '')
+-- Setting the default directory to start in nvim configuration directory
+vim.cmd [[cd C:\Users\deniz\AppData\Local\nvim]]
 
--- Set the color scheme
-vim.cmd([[colorscheme carbonized-dark]])
+-- Theme settings
+vim.cmd [[syntax enable]]
+vim.cmd [[set background=dark]]
+vim.cmd [[colorscheme gruvbox]]
+
+-- Nvim-Tree configuration
+vim.g.nvim_tree_auto_open = 1
+vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
+
+-- ALE configuration
+vim.g.ale_linters = {
+  python = {'flake8', 'mypy'},
+  cpp = {'clangd'},
+  c = {'clangd'}
+}
+
+-- Coc.nvim configuration for LSP and autocompletion
+vim.g.coc_global_extensions = {'coc-pyright', 'coc-clangd', 'coc-json'}
+
+-- Airline configuration
+vim.g.airline_powerline_fonts = 1
+
+-- Other useful settings
+vim.wo.number = true -- Show line numbers
+vim.wo.relativenumber = true -- Show relative line numbers
+
+-- Nvim-Tree indentation markers
+vim.g.nvim_tree_indent_markers = 1
+
+-- Specific settings for Python, C, and C++
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  command = "setlocal ts=4 sts=4 sw=4 expandtab"
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cpp",
+  command = "setlocal ts=4 sts=4 sw=4 expandtab"
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "c",
+  command = "setlocal ts=4 sts=4 sw=4 expandtab"
+})
