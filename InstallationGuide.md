@@ -34,7 +34,32 @@
 </ul>
 
 <h2>Install Packer</h2>
+<ul>
+    <li>Packer:
 <code>sh git clone --depth 1 https://github.com/wbthomason/packer.nvim\~/.local/share/nvim/site/pack/packer/start/packer.nvim</code>
+    </li>
+</ul>
+
+<h2>Install GitHub Copilot</h2>
+<ul>
+    <li>Neovim, Windows (PowerShell Command):
+        <code>git clone https://github.com/github/copilot.vim.git `
+  $HOME/AppData/Local/nvim/pack/github/start/copilot.vim</code>
+    </li>
+    <li>Vim, Windows (PowerShell Command):
+        <code>git clone https://github.com/github/copilot.vim.git `
+  $HOME/vimfiles/pack/github/start/copilot.vim</code>
+    </li>
+    <li>Neovim, Linux/macOS:
+        <code>git clone https://github.com/github/copilot.vim.git \
+  ~/.config/nvim/pack/github/start/copilot.vim</code>
+    </li>
+    <li>Vim, Linux/macOS:
+        <code>git clone https://github.com/github/copilot.vim.git \
+  ~/.vim/pack/github/start/copilot.vim</code>
+    </li>
+</ul>
+
 
 <h2>Conqueror Of Completion (CoC) Setup:</h2>
 <ul>
