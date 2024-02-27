@@ -1,11 +1,12 @@
 ## Command Prompt Color Scheme
 
+### Gruvbox
 - **Foreground**: `#EBDBB2` ![#EBDBB2](https://via.placeholder.com/15/EBDBB2/000000?text=+)
 - **Background**: `#282828` ![#282828](https://via.placeholder.com/15/282828/000000?text=+)
 - **Cursor Color**: `#FE8019` ![#FE8019](https://via.placeholder.com/15/FE8019/000000?text=+)
 - **Selection Background**: `#FFFFFF` ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+)
 
-#### Standard Colors
+##### Standard Colors
 
 - **Black [1]**: `#282828` ![#282828](https://via.placeholder.com/15/282828/000000?text=+)
 - **Black [2]**: `#928374` ![#928374](https://via.placeholder.com/15/928374/000000?text=+)
