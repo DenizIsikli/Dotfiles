@@ -24,7 +24,7 @@ require('packer').startup(function()
 
   require('lualine').setup {
     options = {
-  use 'morhetz/gruvbox'
+    use 'morhetz/gruvbox'
       icons_enabled = true,
       theme = 'codedark',
       component_separators = { left = '', right = ''},
