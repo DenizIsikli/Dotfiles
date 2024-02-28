@@ -24,8 +24,9 @@ require('packer').startup(function()
 
   require('lualine').setup {
     options = {
+  use 'morhetz/gruvbox'
       icons_enabled = true,
-      theme = 'gruvbox',
+      theme = 'codedark',
       component_separators = { left = '', right = ''},
       section_separators = { left = '', right = ''},
       disabled_filetypes = {
@@ -143,4 +144,5 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "c",
   command = "setlocal ts=4 sts=4 sw=4 expandtab"
 })
+
 
