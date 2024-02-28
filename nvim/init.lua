@@ -1,96 +1,22 @@
-require('packer').startup(function()
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+require('plugins')
 
-  -- Theme
-  use 'morhetz/gruvbox'
+-- Lualine configuration
+require('lualine').setup{
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {
+      'filename',
+      function()
+        return vim.fn['nvim_treesitter#statusline'](180)
+      end},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+}
 
-  -- Neo-Tree
-  use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        requires = { 
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
-    }
-  }
-
-  -- Lualine (Status Line)
-  use {
-	'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true } 
-  }
-
-  require('lualine').setup {
-    options = {
-    use 'morhetz/gruvbox'
-      icons_enabled = true,
-      theme = 'codedark',
-      component_separators = { left = '', right = ''},
-      section_separators = { left = '', right = ''},
-      disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-      ignore_focus = {},
-      always_divide_middle = true,
-      globalstatus = false,
-      refresh = {
-        statusline = 1000,
-        tabline = 1000,
-        winbar = 1000,
-      }	
-    },
-    sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
-      lualine_c = {'filename'},
-      lualine_x = {'encoding', 'fileformat', 'filetype'},
-      lualine_y = {'progress'},
-      lualine_z = {'location'}
-    },
-      inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {'location'},
-      lualine_y = {},
-      lualine_z = {}
-    },
-    tabline = {},
-    winbar = {},
-    inactive_winbar = {},
-    extensions = {}
-  }
-	
-  -- Fugitive for Git integration
-  use 'tpope/vim-fugitive'
-
-  -- ALE for linting and syntax checking
-  use 'dense-analysis/ale'
-
-  -- Coc.nvim for autocompletion, using the release branch
-  use {'neoclide/coc.nvim', branch = 'release'}
-
-  -- Vim-polyglot for enhanced syntax highlighting
-  use 'sheerun/vim-polyglot'
-  
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-  }
-
-  -- Markdown Preview
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
-end)
-
+-- Vim-Fugitive configuration --
 -- Setting the default directory to start in Neovim projects folder
 vim.cmd [[cd C:\Users\deniz\Neovim]]
 
@@ -144,5 +70,4 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "c",
   command = "setlocal ts=4 sts=4 sw=4 expandtab"
 })
-
 
