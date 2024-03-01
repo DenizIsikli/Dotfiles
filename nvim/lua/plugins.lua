@@ -16,6 +16,12 @@ require('packer').startup(function()
     }
   }
 
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- Lualine (Status Line)
   use {
 	'nvim-lualine/lualine.nvim',
