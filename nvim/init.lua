@@ -8,6 +8,6 @@
 -- init.lua             : The initial script that Neovim runs, which sets up the environment
 --                        by requiring the above configuration scripts.
 
-require('plugins')      -- Load the plugin configurations
 require('nvimsetup')    -- Load the Neovim API and command setup
+require('plugins')      -- Load the plugin configurations
 
