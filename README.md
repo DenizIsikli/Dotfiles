@@ -7,10 +7,19 @@ Personal Neovim configuration repository.
 #### Configurations
 
 - `nvim/`: The main directory containing Neovim configuration files.
-  - `init.lua`: The primary configuration file loaded by Neovim on startup.
+  - `init.lua`: The primary configuration file loaded by Neovim on startup, which sets up the environment by requiring the configuration scripts.
   - `lua/`: Directory containing Lua configuration scripts.
-    - `nvimsetup.lua`: Contains API commands and key mappings for Neovim.
-    - `plugins.lua`: Plugin configurations and settings for Neovim.
+    - `config/`: Configuration modules for Neovim settings.
+      - `asyncLintengine.lua`: Async linting engine configuration.
+      - `directory.lua`: Directory management commands.
+      - `general.lua`: General settings for Neovim.
+      - `harpoon.lua`: Harpoon plugin configuration.
+      - `lsp.lua`: Language Server Protocol configuration.
+      - `lualine.lua`: Lualine status line configuration.
+      - `neotree.lua`: Neotree file explorer configuration.
+      - `init.lua`: Initializer for configurations in the `config` directory.
+    - `plugins/`: Packer plugin management.
+      - `plugins.lua`: Plugin specifications and setup using packer.nvim.
 
 #### Additional Documentation
 
