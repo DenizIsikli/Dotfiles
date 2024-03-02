@@ -16,10 +16,12 @@ require('packer').startup(function()
     }
   }
 
-  -- Telescope
+  -- Harpoon
+  use "nvim-lua/plenary.nvim"
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    requires = { {'nvim-lua/plenary.nvim'} }
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
   }
 
   -- Lualine (Status Line)
