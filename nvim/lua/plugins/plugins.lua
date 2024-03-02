@@ -33,6 +33,13 @@ require('packer').startup(function()
   -- Fugitive for Git integration
   use 'tpope/vim-fugitive'
 
+  -- Mason Neovim
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
   -- ALE for linting and syntax checking
   use 'dense-analysis/ale'
 
