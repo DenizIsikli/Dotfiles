@@ -3,14 +3,15 @@
 
 -- lua/                     : Directory containing Lua configuration scripts
 --   ├ config/              : Configuration modules for Neovim settings
---   │ ├ asyncLintengine.lua: Async linting engine configuration
+--   │ ├ diagnostics.lua    : Diagnostic settings for Neovim
 --   │ ├ directory.lua      : Directory management commands
 --   │ ├ general.lua        : General settings for Neovim
 --   │ ├ harpoon.lua        : Harpoon plugin configuration
+--   │ ├ init.lua           : Initializer for configurations in the config directory
 --   │ ├ lsp.lua            : Language Server Protocol configuration
 --   │ ├ lualine.lua        : Lualine status line configuration
---   │ ├ neotree.lua        : Neotree file explorer configuration
---   │ └ init.lua           : Initializer for configurations in the config directory
+--   │ ├ mason.lua          : Mason plugin configuration
+--   │ └ neotree.lua        : Neotree file explorer configuration
 --   └ plugins/             : Packer plugin management
 --     └ plugins.lua        : Plugin specifications and setup using packer.nvim
 

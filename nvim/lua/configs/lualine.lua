@@ -1,5 +1,12 @@
 -- Lualine configuration
 require('lualine').setup{
+  options = {
+    theme = 'gruvbox',
+    icons_enabled = true,
+    section_separators = {'', ''},
+    component_separators = {'', ''},
+  },
+
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},

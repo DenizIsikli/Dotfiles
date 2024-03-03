@@ -26,8 +26,8 @@ require('packer').startup(function()
 
   -- Lualine (Status Line)
   use {
-	'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true } 
+     'nvim-lualine/lualine.nvim',
+     requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   -- Fugitive for Git integration
@@ -40,15 +40,7 @@ require('packer').startup(function()
     "neovim/nvim-lspconfig",
   }
 
-  -- ALE for linting and syntax checking
-  use 'dense-analysis/ale'
-
-  -- Coc.nvim for autocompletion, using the release branch
-  use {'neoclide/coc.nvim', branch = 'release'}
-
-  -- Vim-polyglot for enhanced syntax highlighting
-  use 'sheerun/vim-polyglot'
-  
+  -- Start Screen Dashboard
   use {
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
