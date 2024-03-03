@@ -1,10 +1,10 @@
 -- Configuration
-require('config.diagnostics')
-require('config.directory')
-require('config.general')
-require('config.harpoon')
-require('config.lsp')
-require('config.lualine')
-require('config.mason')
-require('config.neotree')
+require('configs.diagnostics')
+require('configs.directory')
+require('configs.general')
+require('configs.harpoon')
+require('configs.lsp')
+require('configs.lualine')
+require('configs.mason')
+require('configs.neotree')
 

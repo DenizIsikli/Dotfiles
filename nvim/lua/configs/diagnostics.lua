@@ -13,6 +13,6 @@ vim.diagnostic.config({
   -- Other diagnostic configurations
   severity_sort = true,
   underline = true,
-  update_in_insert = false, -- Update diagnostics in insert mode (could be distracting)
+  update_in_insert = true,
 })
 

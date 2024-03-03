@@ -18,6 +18,5 @@
 -- init.lua                 : The initial script that Neovim runs, which sets up the environment
 --                            by requiring the above configuration scripts.
 
-require('config')           -- Loads all configuration files from the config directory
+require('configs')           -- Loads all configuration files from the config directory
 require('plugins.plugins')  -- Loads the plugin specifications using packer.nvim
-
