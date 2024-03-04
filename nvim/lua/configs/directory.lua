@@ -1,3 +1,4 @@
+-- Directory Configuration
 -- Setting the default directory to start in Neovim projects folder
 vim.cmd [[cd C:\Users\deniz\Neovim]]
 -- vim.cmd [[cd C:\Users\deniz\AppData\Local\nvim]]

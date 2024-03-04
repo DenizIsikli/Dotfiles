@@ -1,3 +1,4 @@
+-- Plugin Manager: Packer
 require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -23,11 +24,17 @@ require('packer').startup(function()
       branch = "harpoon2",
       requires = { {"nvim-lua/plenary.nvim"} }
   }
+ 
+  -- Telescope
+  use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.5',
+      requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   -- Lualine (Status Line)
   use {
      'nvim-lualine/lualine.nvim',
-     requires = { 'kyazdani42/nvim-web-devicons' }
+     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   -- Fugitive for Git integration
@@ -44,9 +51,6 @@ require('packer').startup(function()
   use {
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
   }
 
   -- Markdown Preview

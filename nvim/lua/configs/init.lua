@@ -1,4 +1,5 @@
--- Configuration
+-- Configuration Directory
+require('configs.dashboard')
 require('configs.diagnostics')
 require('configs.directory')
 require('configs.general')
