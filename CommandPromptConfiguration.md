@@ -19,3 +19,12 @@
 | Purple | `#B16286` ![#B16286](https://via.placeholder.com/15/B16286/000000?text=+) | `#D3869B` ![#D3869B](https://via.placeholder.com/15/D3869B/000000?text=+) |
 | Cyan   | `#689D6A` ![#689D6A](https://via.placeholder.com/15/689D6A/000000?text=+) | `#8EC07C` ![#8EC07C](https://via.placeholder.com/15/8EC07C/000000?text=+) |
 | White  | `#A89984` ![#A89984](https://via.placeholder.com/15/A89984/000000?text=+) | `#EBDBB2` ![#EBDBB2](https://via.placeholder.com/15/EBDBB2/000000?text=+) |
+</br>
+
+## Command Prompt Size Configuration
+- 24" 1920x1080
+  - **Launch Size**
+    - Columns: 150
+    - Rows: 40
+  - **Lauch Parameters**
+    - Center On Launch: Enabled 
