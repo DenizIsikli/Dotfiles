@@ -22,6 +22,7 @@
 </br>
 
 ## Command Prompt Size Configuration
+
 - 24" 1920x1080
   - **Launch Size**
     - Columns: 140

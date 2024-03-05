@@ -14,6 +14,6 @@ Personal Neovim configuration repository.
 
 #### Additional Documentation
 
-- `CommandPromptConfiguration.md`: My custom Gruvbox color scheme settings for the command prompt.
+- `CommandPromptConfiguration.md`: Personal command prompt configuration settings.
 - `InstallationGuide.md`: A guide on setting up Neovim with this configuration.
 - `Shortcuts&Commands.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
