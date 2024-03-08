@@ -2,8 +2,8 @@
 -- =========================================
 
 -- lua/                     : Directory containing Lua configuration scripts
---   ├ configs/              : Configuration modules for Neovim settings
---   │ ├ dashboard.lua      : Start screen dashboard configuration 
+--   ├ configs/             : Configuration modules for Neovim settings
+--   │ ├ alpha.lua          : Start screen dashboard configuration 
 --   │ ├ diagnostics.lua    : Diagnostic settings for Neovim
 --   │ ├ directory.lua      : Directory management commands
 --   │ ├ general.lua        : General settings for Neovim
