@@ -36,16 +36,16 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
     -- Directories
-    dashboard.button( "p", "  > Project Folder" , ":ProjectDir<CR>"),
-    dashboard.button( "c", "  > Config Folder", ":ConfigDir<CR>"),
+    dashboard.button( "p", "  > Project Folder" , ":ProjectDir<CR>"),
+    dashboard.button( "c", "  > Config Folder", ":ConfigDir<CR>"),
 
-    -- Telescope
-    dashboard.button( "f", "  > Find File", ":Telescope find_files<CR>"),
-    dashboard.button( "r", "  > Recent Files", ":Telescope oldfiles<CR>"),
-    dashboard.button( "h", "  > Find Help", ":Telescope help_tags<CR>"),
+-- Telescope
+    dashboard.button( "f", "  > Find File", ":Telescope find_files<CR>"),
+    dashboard.button( "r", "  > Recent Files", ":Telescope oldfiles<CR>"),
+    dashboard.button( "h", "  > Find Help", ":Telescope help_tags<CR>"),
 
     -- Quit
-    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
 }
 
 -- Send config to alpha
