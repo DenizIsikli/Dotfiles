@@ -50,8 +50,6 @@
 ```
 </details>
 
-</br>
-
 ## Size Configuration
 
 - 24" 1920x1080
@@ -60,8 +58,6 @@
     - Rows: 45
   - **Lauch Parameters**
     - Center On Launch: Enabled
-
-</br>
 
 ## Nerd Font
 
