@@ -55,7 +55,7 @@
 - 24" 1920x1080
   - **Launch Size**
     - Columns: 140
-    - Rows: 45
+    - Rows: 50
   - **Lauch Parameters**
     - Center On Launch: Enabled
 
