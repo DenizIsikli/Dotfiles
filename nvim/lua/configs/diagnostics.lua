@@ -7,7 +7,7 @@ vim.diagnostic.config({
 vim.diagnostic.config({
   -- Enable inline diagnostics
   virtual_text = {
-    prefix = '●', -- Options: '■', '▎', 'x', etc.
+    prefix = '●', -- Options: '■', '▎', 'x'
     spacing = 4,  -- Sets the spacing between the end of the line and the diagnostic message
   },
   
