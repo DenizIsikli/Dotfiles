@@ -1,62 +1,70 @@
 -- Plugin Manager: Packer
 require('packer').startup(function()
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- Theme
-  use 'morhetz/gruvbox'
+    -- Theme
+    use 'morhetz/gruvbox'
 
-  -- Neo-Tree
-  use {
+    -- Neo-Tree
+    use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         requires = { 
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        }
     }
-  }
 
-  -- Harpoon
-  use "nvim-lua/plenary.nvim"
-  use {
-      "ThePrimeagen/harpoon",
-      branch = "harpoon2",
-      requires = { {"nvim-lua/plenary.nvim"} }
-  }
- 
-  -- Telescope
-  use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.5',
-      requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    -- Harpoon
+    use "nvim-lua/plenary.nvim"
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 
-  -- Lualine (Status Line)
-  use {
-     'nvim-lualine/lualine.nvim',
-     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-  -- Fugitive for Git integration
-  use 'tpope/vim-fugitive'
+    -- Lualine (Status Line)
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
-  -- Mason Neovim
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
+    -- Fugitive for Git integration
+    use 'tpope/vim-fugitive'
 
-  -- Start Screen Dashboard
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-  }
+    -- Mason Neovim
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
 
-  -- Markdown Preview
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+    -- Start Screen Dashboard
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+    }
+
+    -- Markdown Preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
 end)
 

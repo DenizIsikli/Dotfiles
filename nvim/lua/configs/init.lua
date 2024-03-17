@@ -1,5 +1,6 @@
 -- Configuration Directory
 require('configs.alpha')
+require('configs.autopairs')
 require('configs.diagnostics')
 require('configs.directory')
 require('configs.general')
