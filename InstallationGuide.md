@@ -11,6 +11,9 @@
 - [Install Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [Packer](https://github.com/wbthomason/packer.nvim)
 - [Mason.nvim](https://github.com/williamboman/mason.nvim)
+    - Setup Mason bin folder to path
+- [Nerd Fonts](https://www.nerdfonts.com/)
+    - Currently using  [FiraCode](https://github.com/tonsky/FiraCode?tab=readme-ov-file)
 - [GIT Installation](https://git-scm.com/downloads)
 
 <h2>Install GitHub Copilot</h2>
