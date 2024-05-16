@@ -3,24 +3,15 @@
 <body>
 
 <h1>Neovim Setup Guide</h1>
-<p>Welcome to the Neovim Setup Guide! This guide will help you set up Neovim on your system and configure essential plugins for a productive coding environment.</p>
+<p>This is a Neovim configuration guide for Windows, but you can easily cater to Linux/MacOS if needed by checking out the links and their respective commands.</p>
 
-<h2>Neovim Installation:</h2>
-<ul>
-    <li>Install Neovim:
-        <code>sudo apt install neovim</code>
-    </li>
-    <li>GIT Installation:
-        <code>sudo apt install git</code>
-    </li>
-</ul>
+<h2>Neovim Installation</h2>
 
-<h2>Install Packer</h2>
-<ul>
-    <li>Packer:
-<code>sh git clone --depth 1 https://github.com/wbthomason/packer.nvim\~/.local/share/nvim/site/pack/packer/start/packer.nvim</code>
-    </li>
-</ul>
+- [Install Chocolatey](https://chocolatey.org/install)
+- [Install Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+- [Packer](https://github.com/wbthomason/packer.nvim)
+- [Mason.nvim](https://github.com/williamboman/mason.nvim)
+- [GIT Installation](https://git-scm.com/downloads)
 
 <h2>Install GitHub Copilot</h2>
 <ul>
@@ -42,7 +33,7 @@
     </li>
 </ul>
 
-<h2>Windows Subsystem for Linux (WSL) Setup:</h2>
+<h2>Windows Subsystem for Linux (WSL) Setup</h2>
 <ul>
     <li>Enable the Windows Subsystem for Linux (WSL):
         <code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code>
