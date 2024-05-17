@@ -4,7 +4,14 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Theme
-    use 'morhetz/gruvbox'
+    use {
+        'maxmx03/solarized.nvim',
+        config = function()
+          vim.o.background = 'light'
+
+          vim.cmd.colorscheme 'solarized'
+        end
+    }
 
     -- Neo-Tree
     use {
