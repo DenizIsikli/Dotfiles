@@ -3,8 +3,12 @@ vim.cmd [[syntax enable]]
 
 vim.wo.number = true -- Show line numbers
 vim.wo.relativenumber = true -- Show relative line numbers
+
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.swapfile = false -- Disable swap files
+
+vim.opt.cmdheight = 1
+vim.cmd [[highlight LineNr guifg=#073642]]
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

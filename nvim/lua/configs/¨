@@ -1,4 +1,4 @@
-local status, lualine = pcall(require, "lualine")
+local status, lualine = pcall(require, "lualine.themes.solarized_light")
 if not status then
   return
 end
@@ -6,22 +6,25 @@ end
 local lualine_solarized_light = require("lualine.themes.solarized_light")
 
 local new_colors = {
-  normal = "#073642",
-  insert = "#2aa198",
-  command = "#FFDA7B",
-  visual = "#FF61EF",
+  blue = "#073642",
+  green = "#3EFFDC",
+  violet = "#FF61EF",
+  yellow = "#FFDA7B",
   black = "#000000",
 }
 
-lualine_solarized_light.normal.a.bg = new_colors.normal
-lualine_solarized_light.insert.a.bg = new_colors.insert
-lualine_solarized_light.visual.a.bg = new_colors.visual
-
+lualine_solarized_light.normal.a.bg = new_colors.darker_blue
+lualine_solarized_light.insert.a.bg = new_colors.green
+lualine_solarized_light.visual.a.bg = new_colors.violet
+lualine_solarized_light.replace.a.bg = new_colors.yellow
+lualine_solarized_light.command.a.bg = new_colors.yellow
+lualine_solarized_light.inactive.a.bg = new_colors.blue
+lualine_solarized_light.inactive.a.fg = new_colors.black
 
 lualine_solarized_light.command = {
   a = {
     gui = "bold",
-    bg = new_colors.command,
+    bg = new_colors.yellow,
     fg = new_colors.black,
   },
 }
@@ -42,13 +45,13 @@ lualine.setup({
         right_padding = 2,
       },
     },
-    lualine_b = {
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = {
       {
         'filename',
         separator = { right = '' },
       },
     },
-    lualine_c = { 'branch', 'diff', 'diagnostics' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = {
