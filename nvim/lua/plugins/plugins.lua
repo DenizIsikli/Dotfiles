@@ -66,6 +66,7 @@ require('packer').startup(function()
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    -- Autopairs
     use {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
