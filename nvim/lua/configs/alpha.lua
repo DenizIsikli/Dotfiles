@@ -2,6 +2,14 @@
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
+-- Define custom highlight group for the header
+vim.cmd([[
+    highlight AlphaHeader guifg=#2aa198
+]])
+
+-- Set header with custom highlight group
+dashboard.section.header.opts.hl = "AlphaHeader"
+
 -- Set header
 dashboard.section.header.val = {
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
