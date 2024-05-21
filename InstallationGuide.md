@@ -9,12 +9,12 @@
 
 - [Install Chocolatey](https://chocolatey.org/install)
 - [Install Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
-- [Packer](https://github.com/wbthomason/packer.nvim)
-- [Mason.nvim](https://github.com/williamboman/mason.nvim)
+- [Install Packer](https://github.com/wbthomason/packer.nvim)
+- [Setup Mason.nvim](https://github.com/williamboman/mason.nvim)
     - Setup Mason bin folder to path
-- [Nerd Fonts](https://www.nerdfonts.com/)
-    - Currently using  [FiraMono Nerd Font](https://www.nerdfonts.com/font-downloads)
-- [GIT Installation](https://git-scm.com/downloads)
+- [Install Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+    - Currently using FiraMono Nerd Font
+- [Install GIT](https://git-scm.com/downloads)
 
 <h2>Install GitHub Copilot</h2>
 <ul>
