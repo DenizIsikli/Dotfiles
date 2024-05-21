@@ -1,3 +1,4 @@
+-- Lualine Configuration
 local status, lualine = pcall(require, "lualine")
 if not status then
   return
@@ -29,8 +30,8 @@ lualine_solarized_light.command = {
 lualine.setup({
   options = {
     theme = lualine_solarized_light,
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
     always_divide_middle = false,
     globalstatus = true,
   },
@@ -38,14 +39,19 @@ lualine.setup({
     lualine_a = {
       {
         'mode',
-        separator = { right = '' },
-        right_padding = 2,
+        options = {
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+        }
       },
     },
     lualine_b = {
       {
         'filename',
-        separator = { right = '' },
+        options = {
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+        }
       },
     },
     lualine_c = { 'branch', 'diff', 'diagnostics' },
@@ -54,8 +60,10 @@ lualine.setup({
     lualine_z = {
       {
         'location',
-        separator = { left = '' },
-        left_padding = 2,
+        options = {
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+        }
       },
     },
   },
@@ -70,6 +78,4 @@ lualine.setup({
   tabline = {},
   extensions = {},
 })
-
-vim.opt.laststatus = 3
 

@@ -4,14 +4,7 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Theme
-    use {
-        'maxmx03/solarized.nvim',
-        config = function()
-          vim.o.background = 'light'
-
-          vim.cmd.colorscheme 'solarized'
-        end
-    }
+    use 'shaunsingh/solarized.nvim'
 
     -- Neo-Tree
     use {

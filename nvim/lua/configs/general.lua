@@ -10,11 +10,17 @@ vim.opt.swapfile = false -- Disable swap files
 vim.opt.cmdheight = 1
 vim.cmd [[highlight LineNr guifg=#073642]]
 
+-- Set statusline
+vim.opt.laststatus = 3
+vim.opt.statusline = "%<%f %h%m%r%=%-14.(%l,%c%V%) %P"
+
+-- Misc settings
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+-- Set mapleader
 vim.g.mapleader = "æ"
 
 -- Resizing window bigger
