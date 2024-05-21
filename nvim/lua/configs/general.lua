@@ -1,6 +1,10 @@
 -- General Settings
 vim.cmd [[syntax enable]]
 
+-- Solarized light theme
+vim.cmd [[colorscheme solarized]]
+vim.cmd [[set background=light]]
+
 vim.wo.number = true -- Show line numbers
 vim.wo.relativenumber = true -- Show relative line numbers
 
