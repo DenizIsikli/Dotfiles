@@ -3,6 +3,9 @@ require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Solarized Light Theme
+    use 'shaunsingh/solarized.nvim'
+
     -- Neo-Tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
