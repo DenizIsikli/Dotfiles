@@ -13,7 +13,7 @@
 - [Mason.nvim](https://github.com/williamboman/mason.nvim)
     - Setup Mason bin folder to path
 - [Nerd Fonts](https://www.nerdfonts.com/)
-    - Currently using  [FiraCode](https://github.com/tonsky/FiraCode?tab=readme-ov-file)
+    - Currently using  [FiraMono Nerd Font](https://www.nerdfonts.com/font-downloads)
 - [GIT Installation](https://git-scm.com/downloads)
 
 <h2>Install GitHub Copilot</h2>
