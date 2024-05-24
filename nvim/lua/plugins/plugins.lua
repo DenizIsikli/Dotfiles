@@ -54,10 +54,10 @@ require('packer').startup(function()
     }
 
     -- Markdown Preview
-    use({
+    use {
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
-    })
+    }
 
     -- Autopairs
     use {
@@ -65,6 +65,14 @@ require('packer').startup(function()
         event = "InsertEnter",
         config = function()
             require("nvim-autopairs").setup {}
+        end
+    }
+
+    -- Comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+           require('Comment').setup()
         end
     }
 end)
