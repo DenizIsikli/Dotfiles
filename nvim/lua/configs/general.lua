@@ -1,9 +1,13 @@
 -- General Settings
 vim.cmd [[syntax enable]]
 
--- Solarized light theme
-vim.cmd [[colorscheme solarized]]
-vim.cmd [[set background=light]]
+-- Solarized Light Theme
+-- vim.cmd [[colorscheme solarized]]
+-- vim.cmd [[set background=light]]
+
+-- Gruvbox Dark Theme
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox]])
 
 vim.wo.number = true -- Show line numbers
 vim.wo.relativenumber = true -- Show relative line numbers
@@ -12,7 +16,12 @@ vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.swapfile = false -- Disable swap files
 
 vim.opt.cmdheight = 1
-vim.cmd [[highlight LineNr guifg=#073642]]
+
+-- Solarized Light Theme
+-- vim.cmd [[highlight LineNr guifg=#073642]]
+
+-- Gruvbox Dark Theme
+vim.cmd [[highlight LineNr guifg=#928374]]
 
 -- Set statusline
 vim.opt.laststatus = 3

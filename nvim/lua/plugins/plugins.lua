@@ -4,7 +4,10 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Solarized Light Theme
-    use 'shaunsingh/solarized.nvim'
+    -- use 'shaunsingh/solarized.nvim'
+    
+    -- Gruvbox Dark Theme
+    use { "morhetz/gruvbox" }
 
     -- Neo-Tree
     use {

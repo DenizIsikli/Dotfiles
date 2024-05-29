@@ -10,7 +10,7 @@ vim.diagnostic.config({
     prefix = '●', -- Options: '■', '▎', 'x'
     spacing = 4,  -- Sets the spacing between the end of the line and the diagnostic message
   },
-  
+
   -- Other diagnostic configurations
   severity_sort = true,
   underline = true,

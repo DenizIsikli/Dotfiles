@@ -45,7 +45,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "p", "  > Project Folder" , ":ProjectDir<CR>"),
     dashboard.button( "c", "  > Config Folder", ":ConfigDir<CR>"),
 
--- Telescope
+    -- Telescope
     dashboard.button( "f", "  > Find File", ":Telescope find_files<CR>"),
     dashboard.button( "r", "  > Recent Files", ":Telescope oldfiles<CR>"),
     dashboard.button( "h", "  > Find Help", ":Telescope help_tags<CR>"),
