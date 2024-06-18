@@ -1,6 +1,6 @@
 # Neovim Configuration
 
-Personal Neovim configuration repository.
+Personal Neovim configuration, made using LazyVim.
 
 ## Repository Structure
 
@@ -9,7 +9,7 @@ Personal Neovim configuration repository.
 - `nvim/`: The main directory containing Neovim configuration files.
   - `init.lua`: The primary configuration file loaded by Neovim on startup, which sets up the environment by requiring the configuration scripts.
   - `lua/`: Directory containing Lua configuration scripts.
-    - `configs/`: Directory containing configuration files for various plugins.
+    - `config/`: Directory containing configuration files for various plugins.
     - `plugins/`: Directory containing plugin configuration files.
 
 #### Additional Documentation
