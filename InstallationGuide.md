@@ -55,6 +55,13 @@
     </li>
 </ul>
 
+<h2>xclip</h2>
+<ul>
+    <li>Enable xclip:
+        <code>sudo apt update</code>
+        <code>sudo apt-get install -y xclip</code>
+    </li>
+
 </body>
 </html>
 
