@@ -1,6 +1,6 @@
-# Neovim Configuration
+# Dotfiles
 
-Personal Neovim configuration, made using LazyVim.
+Personal dotfiles for my teck stack.
 
 ## Repository Structure
 
@@ -11,9 +11,12 @@ Personal Neovim configuration, made using LazyVim.
   - `lua/`: Directory containing Lua configuration scripts.
     - `config/`: Directory containing configuration files for various plugins.
     - `plugins/`: Directory containing plugin configuration files.
+- `tmux/`
+  - `tmux.conf`: Tmux configuration.
 
 #### Additional Documentation
 
 - `CommandPromptConfiguration.md`: Personal command prompt configuration settings.
 - `InstallationGuide.md`: A guide on setting up Neovim with this configuration.
-- `Shortcuts&Commands.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
+- `NeovimCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
+- `TmuxCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Tmux.
