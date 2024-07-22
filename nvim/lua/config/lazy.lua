@@ -19,6 +19,8 @@ require('lazy').setup({
   require('plugins.autopairs'),
   -- Comment
   require('plugins.comment'),
+  -- Copilot
+  require('plugins.copilot'),
   -- Friendly Snippets
   require('plugins.friendlysnippets'),
   -- Git
