@@ -23,8 +23,6 @@ require('lazy').setup({
   require('plugins.friendlysnippets'),
   -- Git
   require('plugins.git'),
-  -- Harpoon
-  require('plugins.harpoon'),
   -- LSP Configurations
   require('plugins.lsp'),
   -- Lualine (Status Line)
@@ -41,4 +39,6 @@ require('lazy').setup({
   require('plugins.theme'),
   -- Transparent
   require('plugins.transparent'),
+  -- Trouble
+  require('plugins.trouble'),
 })

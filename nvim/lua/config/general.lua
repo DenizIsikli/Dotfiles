@@ -1,6 +1,5 @@
 -- General Configuration
 vim.wo.number = true -- Show line numbers
-vim.wo.relativenumber = true -- Show relative line numbers
 
 vim.opt.swapfile = false -- Disable swap files
 
@@ -29,10 +28,10 @@ vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent =
 vim.g.have_nerd_font = true
 
 -- Resizing window bigger
-vim.api.nvim_set_keymap('n', '<Leader>5', ':resize +5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>6', ':resize +5<CR>', { noremap = true, silent = true })
 
 -- Resizing window smaller
-vim.api.nvim_set_keymap('n', '<Leader>4', ':resize -5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>5', ':resize -5<CR>', { noremap = true, silent = true })
 
 -- Movement between windows
 vim.api.nvim_set_keymap('n', '<Leader>h', '<C-w>h', { noremap = true, silent = true }) -- Left
