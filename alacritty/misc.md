@@ -1,4 +1,4 @@
-## Initial Alacritty yml file 
+## Initial Alacritty yml file location
 <pre><code>/usr/share/doc/alacritty/examples/alacritty.yml</code></pre>
 
 ## Add Alacritty as default terminal
