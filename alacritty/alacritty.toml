@@ -46,3 +46,6 @@ white = "0xebdbb2"
 
 [cursor]
 style = "Block"
+
+[shell]
+program = "tmux"
