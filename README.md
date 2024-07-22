@@ -11,12 +11,14 @@ Personal dotfiles for my teck stack.
   - `lua/`: Directory containing Lua configuration scripts.
     - `config/`: Directory containing configuration files for various plugins.
     - `plugins/`: Directory containing plugin configuration files.
+- `alacritty/`
+  - `alacritty.toml`: Alacritty configuration.
 - `tmux/`
   - `tmux.conf`: Tmux configuration.
 
 #### Additional Documentation
 
-- `CommandPromptConfiguration.md`: Personal command prompt configuration settings.
+- `CommandPromptConfiguration.md`: Personal command prompt configuration settings (Windows).
 - `InstallationGuide.md`: A guide on setting up Neovim with this configuration.
 - `NeovimCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
 - `TmuxCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Tmux.
