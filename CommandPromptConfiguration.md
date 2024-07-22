@@ -1,4 +1,4 @@
-## Color Scheme
+## Command Prompt Configuration (Windows)
 
 ### GruvboxDark
 
