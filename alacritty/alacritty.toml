@@ -5,7 +5,7 @@ position = { x = 0, y = 0 }
 padding = { x = 0, y = 0 }
 decorations = "full"
 title = "Alacritty"
-opacity = 0.9
+opacity = 0.90
 
 [scrolling]
 history = 10000
@@ -21,11 +21,11 @@ glyph_offset = { x = 0, y = 0 }
 
 [colors]
 [colors.primary]
-background = "0x282828"
+background = "0x101010"
 foreground = "0xebdbb2"
 
 [colors.normal]
-black = "0x282828"
+black = "0x101010"
 red = "0xcc241d"
 green = "0x98971a"
 yellow = "0xd79921"
