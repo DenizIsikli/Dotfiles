@@ -1,45 +1,87 @@
--- LSP Configuration
+-- LSP and Treesitter Configuration
 return {
+    -- LSP Config
     'neovim/nvim-lspconfig',
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        'nvim-treesitter/nvim-treesitter', -- Treesitter for enhanced syntax highlighting
+        'hrsh7th/nvim-cmp', -- Completion plugin
+        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+        'L3MON4D3/LuaSnip', -- Snippets plugin
+        'saadparwaiz1/cmp_luasnip', -- Snippet completions
     },
     config = function()
         local lspconfig = require('lspconfig')
         local mason = require('mason')
         local mason_lspconfig = require('mason-lspconfig')
+        local cmp = require('cmp')
+        local luasnip = require('luasnip')
 
         -- Initialize mason
         mason.setup()
-
-        -- Installed LSP Servers
         mason_lspconfig.setup({
-            ensure_installed = { 'lua_ls', 'clangd' },
+            ensure_installed = { 'lua_ls', 'clangd' }, -- Auto install LSPs
         })
+
+        -- nvim-cmp setup
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
+            mapping = cmp.mapping.preset.insert({
+                ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept completion with Enter
+            }),
+            sources = {
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+            },
+        })
+
+        -- Treesitter setup
+        require'nvim-treesitter.configs'.setup {
+            ensure_installed = "all",
+            highlight = {
+                enable = true, -- false will disable the whole extension
+            },
+            indent = {
+                enable = true
+            }
+        }
 
         -- LSP on_attach function
         local on_attach = function(client, bufnr)
+            local buf_set_keymap = vim.api.nvim_buf_set_keymap
+            local opts = { noremap=true, silent=true }
+            -- Keybinding for "Go to Definition"
+            buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
         end
 
-        -- LSP Configuration
+        -- Capabilities for nvim-cmp
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+        -- LSP servers setup
         local servers = { 'lua_ls', 'clangd' }
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {
                 on_attach = on_attach,
+                capabilities = capabilities,
                 flags = {
                     debounce_text_changes = 150,
                 }
             }
         end
 
-        -- Lua (lua_ls)
+        -- Lua (lua_ls) specific setup
         lspconfig.lua_ls.setup {
-            on_attach = on_attach,
             settings = {
                 Lua = {
                     runtime = {
-                        -- LuaJIT in the case of Neovim
                         version = 'LuaJIT',
                         path = vim.split(package.path, ';')
                     },
@@ -57,21 +99,9 @@ return {
             }
         }
 
-        -- C/C++ (clangd)
+        -- C/C++ (clangd) specific setup
         lspconfig.clangd.setup {
             cmd = { 'clangd', '--background-index' },
-            on_attach = on_attach,
-            flags = {
-                debounce_text_changes = 150,
-            },
         }
-
-        -- -- Python (pyright)
-        -- lspconfig.pyright.setup {
-        --     on_attach = on_attach,
-        --     flags = {
-        --         debounce_text_changes = 150,
-        --     },
-        -- }
     end,
 }
