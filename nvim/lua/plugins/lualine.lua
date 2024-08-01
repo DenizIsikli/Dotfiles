@@ -34,29 +34,32 @@ return {
         -- -- Gruvbox Dark LuaLine Theme
         local lualine_gruvbox_dark = require('lualine.themes.gruvbox_dark')
         local new_colors = {
-            normal = '#fb4934',
+            normal = '#3c3836',
             insert = '#689d6a',
-            command = '#fabd2f',
+            command = '#fb4934',
             visual = '#fe8019',
+            white = '#ffffff',
             black = '#000000',
         }
 
         lualine_gruvbox_dark.normal.a.bg = new_colors.normal
+        lualine_gruvbox_dark.normal.a.fg = new_colors.white
         lualine_gruvbox_dark.insert.a.bg = new_colors.insert
+        lualine_gruvbox_dark.insert.a.fg = new_colors.white
         lualine_gruvbox_dark.visual.a.bg = new_colors.visual
+        lualine_gruvbox_dark.visual.a.fg = new_colors.white
 
         lualine_gruvbox_dark.command = {
             a = {
                 gui = 'bold',
                 bg = new_colors.command,
-                fg = new_colors.black,
+                fg = new_colors.white,
             },
         }
 
-        -- Lualine Setup
         lualine.setup({
             options = {
-                theme = lualine_gruvbox_dark, -- Change according to the theme
+                theme = lualine_gruvbox_dark,
                 component_separators = { left = '|', right = '|' },
                 section_separators = { left = '', right = '' },
                 always_divide_middle = false,
