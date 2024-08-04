@@ -19,6 +19,7 @@ Personal dotfiles for my teck stack.
 #### Additional Documentation
 
 - `CommandPromptConfiguration.md`: Personal command prompt configuration settings (Windows).
+- `CustomKeymaps.md`: A list of custom keymaps for Neovim.
 - `InstallationGuide.md`: A guide on setting up Neovim with this configuration.
 - `NeovimCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
 - `TmuxCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Tmux.
