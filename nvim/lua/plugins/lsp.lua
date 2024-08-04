@@ -59,7 +59,7 @@ return {
             local buf_set_keymap = vim.api.nvim_buf_set_keymap
             local opts = { noremap=true, silent=true }
             -- Keybinding for "Go to Definition"
-            buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+            buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         end
 
         -- Capabilities for nvim-cmp

@@ -6,12 +6,12 @@ return {
   keys = {
     {
       "<leader>xx",
-      "<cmd>Trouble diagnostics toggle<cr>",
+      "<cmd>Trouble diagnostics toggle<CR>",
       desc = "Diagnostics (Trouble)",
     },
     {
       "<leader>xs",
-      "<cmd>Trouble symbols toggle focus=false<cr>",
+      "<cmd>Trouble symbols toggle focus=false<CR>",
       desc = "Symbols (Trouble)",
     },
   },
