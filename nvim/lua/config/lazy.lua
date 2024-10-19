@@ -35,6 +35,8 @@ require('lazy').setup({
   require('plugins.mason'),
   -- Neo-Tree
   require('plugins.neotree'),
+  -- Oil
+  require('plugins.oil'),
   -- Telescope
   require('plugins.telescope'),
   -- Theme (e.g., Gruvbox)

@@ -44,14 +44,16 @@ return {
         })
 
         -- Treesitter setup
-        require'nvim-treesitter.configs'.setup {
-            ensure_installed = "all",
+        require('nvim-treesitter.configs').setup {
+            ensure_installed = 'all',
+            auto_install = true,
+            sync_install = false,
+            ignore_install = {},
             highlight = {
-                enable = true, -- false will disable the whole extension
+                enable = true,
+                additional_vim_regex_highlighting = false,
             },
-            indent = {
-                enable = true
-            }
+            modules = {}
         }
 
         -- LSP on_attach function
