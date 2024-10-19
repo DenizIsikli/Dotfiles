@@ -42,6 +42,11 @@
 |---------|--------|------|-------------|
 | `<cmd>lua vim.lsp.buf.definition()<CR>`| `gd`| Normal | Go to definition |
 
+## Oil
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `Oil Parent Directory`| `´`| Normal | Open parent directory |
+
 ## Telescope
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
