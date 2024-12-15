@@ -45,7 +45,7 @@
 ## Oil
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `Oil Parent Directory`| `´`| Normal | Open parent directory |
+| `Oil Parent Directory`| `+`| Normal | Open parent directory |
 
 ## Telescope
 | Command | Keymap | Mode | Description |
