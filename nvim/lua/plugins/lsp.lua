@@ -21,7 +21,7 @@ return {
         -- Initialize mason
         mason.setup()
         mason_lspconfig.setup({
-            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls' },
+            ensure_installed = { 'lua_ls', 'clangd' }, -- Auto install LSPs
         })
 
         -- nvim-cmp setup
@@ -45,14 +45,15 @@ return {
 
         -- Treesitter setup
         require('nvim-treesitter.configs').setup {
-            ensure_installed = { 'lua', 'c', 'cpp', 'python', 'zig' },
-            auto_install = false,
+            ensure_installed = 'all',
+            auto_install = true,
             sync_install = false,
             ignore_install = {},
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
+            modules = {}
         }
 
         -- LSP on_attach function
@@ -67,7 +68,7 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- LSP servers setup
-        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls' }
+        local servers = { 'lua_ls', 'clangd' }
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {
                 on_attach = on_attach,
@@ -104,11 +105,5 @@ return {
         lspconfig.clangd.setup {
             cmd = { 'clangd', '--background-index' },
         }
-
-        -- Python (pyright) specific setup
-        lspconfig.pyright.setup {}
-
-        -- Zig (zls) specific setup
-        lspconfig.zls.setup {}
     end,
 }

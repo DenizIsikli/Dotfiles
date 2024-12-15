@@ -40,23 +40,15 @@ vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', { noremap = true, silent = true }) -- Up
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = true }) -- Right
 
----- Directory Configuration (Neovim Startup Folder)
---  Linux
--- vim.cmd [[cd ~/Code]] -- Project Folder
+-- Directory Configuration (Neovim Startup Folder)
+vim.cmd [[cd ~/Code]] -- Project Folder
 -- vim.cmd [[cd ~/.config/nvim]] -- Configuration Folder
 
--- Windows
-vim.cmd [[cd C:\\Users\\deniz\\Desktop\\Code]] -- Project Folder
--- vim.cmd [[cd C:\\Users\\deniz\\AppData\\Local\\nvim]] -- Configuration Folder
+-- Project Directory
+vim.api.nvim_create_user_command('ProjectDir', "cd ~/Code", {})
 
----- Project/Configuration Directory User Commands
--- Linux
--- vim.api.nvim_create_user_command('ProjectDir', "cd ~/Code", {}) -- Project Directory
--- vim.api.nvim_create_user_command('ConfigDir', "cd ~/.config/nvim", {}) -- Configuration Directory
-
--- Windows
-vim.api.nvim_create_user_command('ProjectDir', "cd C:\\Users\\deniz\\Desktop\\Code", {}) -- Project Directory
-vim.api.nvim_create_user_command('ConfigDir', "cd C:\\Users\\deniz\\AppData\\Local\\nvim", {}) -- Configuration Directory
+-- Configuration Directory
+vim.api.nvim_create_user_command('ConfigDir', "cd ~/.config/nvim", {})
 
 -- Diagnostics Configuration
 vim.diagnostic.config({
