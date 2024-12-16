@@ -21,6 +21,12 @@
 | `<C-w>k`| `<leader>k`| Normal | Move to the window above |
 | `<C-w>l`| `<leader>l`| Normal | Move to the window on the right |
 
+## End of Line Navigation
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `t` | `g_` | Normal | Move to the end of the line |
+| `e` | `^` | Normal | Move to the first non-blank character of the line |
+
 ## Neotree
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|

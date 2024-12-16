@@ -40,6 +40,10 @@ vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', { noremap = true, silent = true }) -- Up
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = true }) -- Right
 
+-- End of Line Navigation
+vim.api.nvim_set_keymap('n', 't', 'g_', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'e', '^', { noremap = true, silent = true })
+
 ---- Directory Configuration (Neovim Startup Folder)
 --  Linux
 -- vim.cmd [[cd ~/Code]] -- Project Folder
@@ -81,3 +85,4 @@ vim.diagnostic.config({
 vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
+
