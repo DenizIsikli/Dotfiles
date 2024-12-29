@@ -4,6 +4,7 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `"+y`   | `<leader>y`| Visual | Copy marked |
+| `+d`    | `<leader>q`| Visual | Copy and delete |
 | `:%y+<CR>`| `<leader>Y`| Normal | Copy entire file |
 
 ## Window Resizing 
