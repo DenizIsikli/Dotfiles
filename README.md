@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="misc/DotfilesRepoReadmePic.jpg" alt="Repository Structure" width="300">
+  <img src="misc/DotfilesRepoReadmePic.jpg" alt="Repository Picture" width="300">
 </div>
 
 # Dotfiles
