@@ -2,7 +2,7 @@
 
 Personal dotfiles for Neovim, Alacritty, and Tmux.
 
-![](misc/DotfilesRepoReadmePic.jpg)
+![](misc\\DotfilesRepoReadmePic.jpg)
 
 ## Repository Structure
 
