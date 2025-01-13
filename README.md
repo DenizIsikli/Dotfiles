@@ -1,6 +1,8 @@
 # Dotfiles
 
-Personal dotfiles for my teck stack.
+Personal dotfiles for Neovim, Alacritty, and Tmux.
+
+![](misc/DotfilesRepoReadmePic.jpg)
 
 ## Repository Structure
 
