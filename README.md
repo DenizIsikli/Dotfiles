@@ -1,8 +1,10 @@
+<div align="center">
+  <img src="misc/DotfilesRepoReadmePic.jpg" alt="Repository Structure" width="300">
+</div>
+
 # Dotfiles
 
 Personal dotfiles for Neovim, Alacritty, and Tmux.
-
-![](misc/DotfilesRepoReadmePic.jpg)
 
 ## Repository Structure
 
