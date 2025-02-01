@@ -17,6 +17,20 @@ return {
                     hide_dotfiles = false,
                 },
             },
+            window  = {
+                position = "left",
+                width = 30,
+                mappings = {},
+            },
+            default_component_configs = {
+                container = {
+                    enable_character_fade = true,
+                },
+            },
         })
+
+        -- Transparent NeoTree 
+        vim.cmd([[ highlight NeoTreeNormal guibg=NONE ctermbg=NONE ]])
+        vim.cmd([[ highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE ]])
     end,
 }

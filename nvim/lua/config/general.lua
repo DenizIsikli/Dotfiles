@@ -10,32 +10,22 @@ vim.opt.laststatus = 3
 vim.opt.statusline = "%<%f %h%m%r%=%-14.(%l,%c%V%) %P"
 
 -- Misc Settings
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.expandtab = true
-vim.opt.cursorline = true
+vim.opt.tabstop = 4 -- Tab Size
+vim.opt.shiftwidth = 4 -- Indent Size
+vim.opt.softtabstop = 4 -- Tab Size
+vim.opt.expandtab = true -- Use Spaces
+vim.opt.cursorline = true -- Highlight Current Line
+vim.opt.wrap = false -- Disable Line Wrapping
+vim.opt.linebreak = true -- Break Lines
 
--- Set Mapleader
-vim.g.mapleader = "æ"
+vim.g.mapleader = "æ" -- Set Mapleader
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true }) -- xclip (Copy Marked)
+vim.api.nvim_set_keymap('v', '<leader>q', '"+d', { noremap = true, silent = true }) -- xclip (Copy and Delete)
+vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent = true }) -- xclip (Copy Entire File)
 
--- xclip (Copy Marked)
-vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true })
-
--- xclip (Copy and Delete)
-vim.api.nvim_set_keymap('v', '<leader>q', '"+d', { noremap = true, silent = true })
-
--- xclip (Copy Entire File)
-vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent = true })
-
--- Set Nerd Font
-vim.g.have_nerd_font = true
-
--- Resize Window (Increase)
-vim.api.nvim_set_keymap('n', '<leader>6', ':resize +5<CR>', { noremap = true, silent = true })
-
--- Resize Window (Decrease)
-vim.api.nvim_set_keymap('n', '<leader>5', ':resize -5<CR>', { noremap = true, silent = true })
+vim.g.have_nerd_font = true -- Set Nerd Font
+vim.api.nvim_set_keymap('n', '<leader>6', ':resize +5<CR>', { noremap = true, silent = true }) -- Resize Window (Increase)
+vim.api.nvim_set_keymap('n', '<leader>5', ':resize -5<CR>', { noremap = true, silent = true }) -- Resize Window (Decrease)
 
 -- Neovim Window Navigation
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', { noremap = true, silent = true }) -- Left
