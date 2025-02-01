@@ -1,6 +1,6 @@
 # To run the script: .\deployWindows.ps1
 
-# # To run the script: chmod +x deploy.sh && ./deploy.sh
+# # To run the script: .\deployWindows.ps1
 # Source paths
 SOURCE_PATH="C:\Users\deniz\AppData\Local\nvim"
 INIT_FILE="$SOURCE_PATH\init.lua"
