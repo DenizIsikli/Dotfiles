@@ -21,7 +21,7 @@ return {
         -- Initialize mason
         mason.setup()
         mason_lspconfig.setup({
-            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls' },
+            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer' },
         })
 
         -- nvim-cmp setup
@@ -67,7 +67,7 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- LSP servers setup
-        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls' }
+        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer' }
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {
                 on_attach = on_attach,
@@ -103,6 +103,25 @@ return {
         -- C/C++ (clangd) specific setup
         lspconfig.clangd.setup {
             cmd = { 'clangd', '--background-index' },
+        }
+
+        -- Rust (rust_analyzer) specific setup
+        lspconfig.rust_analyzer.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                ['rust-analyzer'] = {
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    checkOnSave = {
+                        command = "clippy"
+                    },
+                    procMacro = {
+                        enable = true
+                    },
+                },
+            },
         }
 
         -- Python (pyright) specific setup
