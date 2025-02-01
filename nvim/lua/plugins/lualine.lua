@@ -40,6 +40,7 @@ return {
             visual = '#fe8019',
             white = '#ffffff',
             black = '#000000',
+            pastel = '#ebdbb2',
         }
 
         lualine_gruvbox_dark.normal.a.bg = new_colors.normal
@@ -66,7 +67,9 @@ return {
                 globalstatus = true,
             },
             sections = {
-                lualine_a = { 'mode' },
+                lualine_a = {
+                    { 'mode', fmt = function(str) return '[' .. str .. ']' end, color = { fg = new_colors.pastel } }
+                },
                 lualine_b = { 'filename' },
                 lualine_c = { 'branch', 'diff', 'diagnostics' },
                 lualine_x = { 'encoding', 'filetype' },
