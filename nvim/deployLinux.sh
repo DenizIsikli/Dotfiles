@@ -13,10 +13,10 @@ DEST_PATH="/home/deniz/Code/Dotfiles/nvim"
 # Copy the init.lua file
 cp "$INIT_FILE" "$DEST_PATH"
 
-# Copy the lua folder recursively
+# Copy the lua folder
 cp -r "$LUA_FOLDER" "$DEST_PATH"
 
-# Copy the pack folder recursively
+# Copy the pack folder
 cp -r "$PACK_FOLDER" "$DEST_PATH"
 
 echo "Deployment completed"
