@@ -24,7 +24,7 @@ require('lazy').setup({
   -- Friendly Snippets
   require('plugins.friendlysnippets'),
   -- Git
-  require('plugins.git'),
+  require('plugins.gitsigns'),
   -- LSP Configurations
   require('plugins.lsp'),
   -- Lualine (Status Line)
