@@ -24,8 +24,8 @@ vim.api.nvim_set_keymap('v', '<leader>q', '"+d', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent = true }) -- xclip (Copy Entire File)
 
 vim.g.have_nerd_font = true -- Set Nerd Font
-vim.api.nvim_set_keymap('n', '<leader>6', ':resize +5<CR>', { noremap = true, silent = true }) -- Resize Window (Increase)
-vim.api.nvim_set_keymap('n', '<leader>5', ':resize -5<CR>', { noremap = true, silent = true }) -- Resize Window (Decrease)
+vim.api.nvim_set_keymap('n', '<leader>8', ':resize +5<CR>', { noremap = true, silent = true }) -- Resize Window (Increase)
+vim.api.nvim_set_keymap('n', '<leader>7', ':resize -5<CR>', { noremap = true, silent = true }) -- Resize Window (Decrease)
 
 -- Neovim Window Navigation
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', { noremap = true, silent = true }) -- Left
