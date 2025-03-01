@@ -23,7 +23,7 @@ require('lazy').setup({
   require('plugins.copilot'),
   -- Friendly Snippets
   require('plugins.friendlysnippets'),
-  -- Git
+  -- Gitsigns
   require('plugins.gitsigns'),
   -- Lazygit
   require('plugins.lazygit'),
