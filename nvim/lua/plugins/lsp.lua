@@ -21,7 +21,7 @@ return {
         -- Initialize mason
         mason.setup()
         mason_lspconfig.setup({
-            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer' },
+            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer', 'ts_ls' },
         })
 
         -- nvim-cmp setup
@@ -45,7 +45,7 @@ return {
 
         -- Treesitter setup
         require('nvim-treesitter.configs').setup {
-            ensure_installed = { 'lua', 'c', 'cpp', 'python', 'zig' },
+            ensure_installed = { 'lua', 'c', 'cpp', 'python', 'zig', 'rust', 'typescript', 'javascript' },
             auto_install = false,
             sync_install = false,
             ignore_install = {},
@@ -129,5 +129,14 @@ return {
 
         -- Zig (zls) specific setup
         lspconfig.zls.setup {}
+
+        -- TypeScript (tsserver) specific setup
+        lspconfig.tsserver.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            flags = {
+                debounce_text_changes = 150,
+            },
+        }
     end,
 }
