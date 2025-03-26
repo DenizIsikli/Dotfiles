@@ -67,7 +67,7 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- LSP servers setup
-        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer' }
+        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer', 'ts_ls' }
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup {
                 on_attach = on_attach,
@@ -131,7 +131,7 @@ return {
         lspconfig.zls.setup {}
 
         -- TypeScript (tsserver) specific setup
-        lspconfig.tsserver.setup {
+        lspconfig.ts_ls.setup {
             on_attach = on_attach,
             capabilities = capabilities,
             flags = {
