@@ -1,6 +1,6 @@
 #!/bin/bash
-
 # To run the script: chmod +x deploy.sh && ./deploy.sh
+
 # Source paths
 SOURCE_PATH="/home/deniz/.config/nvim"
 INIT_FILE="$SOURCE_PATH/init.lua"
@@ -9,6 +9,9 @@ PACK_FOLDER="$SOURCE_PATH/pack"
 
 # Destination paths
 DEST_PATH="/home/deniz/Code/Dotfiles/nvim"
+
+# Ensure the destination folder exists
+mkdir -p "$DEST_PATH"
 
 # Copy the init.lua file
 cp "$INIT_FILE" "$DEST_PATH"
