@@ -57,6 +57,9 @@
 ## Telescope
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
+| `select_horizontal`             | `<C-w>`   | Insert/Normal | Open file in horizontal split  |
+| `select_vertical`               | `<C-r>`   | Insert/Normal | Open file in vertical split    |
+| `select_tab`                    | `<C-t>`   | Insert/Normal | Open file in new tab
 | `<cmd>Telescope find_files<CR>`| `<leader>3`| Normal | Find files |
 | `<cmd>Telescope oldfiles<CR>`| `<leader>1`| Normal | Open recent files |
 
