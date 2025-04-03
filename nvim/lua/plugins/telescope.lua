@@ -8,7 +8,20 @@ return {
 
         -- Setup Telescope
         telescope.setup{
-            -- Your Telescope configuration here (if any)
+            defaults = {
+                mappings = {
+                    i = {  -- Insert mode mappings
+                        ["<C-w>"] = "select_horizontal",  -- Open in horizontal split
+                        ["<C-r>"] = "select_vertical",    -- Open in vertical split
+                        ["<C-t>"] = "select_tab",         -- Open in new tab
+                    },
+                    n = {  -- Normal mode mappings
+                        ["<C-w>"] = "select_horizontal",
+                        ["<C-r>"] = "select_vertical",
+                        ["<C-t>"] = "select_tab",
+                    },
+                },
+            }
         }
 
         -- Keymap for <leader>p to search files
