@@ -88,3 +88,6 @@ vim.keymap.set("n", "<leader>T", function()
   vim.cmd("Alpha")
 end, { desc = "Close all buffers and go to Alpha dashboard" })
 
+-- Remove Dot Function
+vim.keymap.set("n", ".", "<Nop>", { noremap = true })
+
