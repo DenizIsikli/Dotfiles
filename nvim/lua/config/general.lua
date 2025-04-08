@@ -80,7 +80,7 @@ vim.g.nvim_tree_indent_markers = 1
 vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
 
 -- Exit To Alpha Dashboard
-vim.keymap.set("n", "<leader>q", function()
+vim.keymap.set("n", "<leader>T", function()
   local bufcount = #vim.fn.getbufinfo({ buflisted = 1 })
   if bufcount <= 1 then
     vim.cmd("Alpha")

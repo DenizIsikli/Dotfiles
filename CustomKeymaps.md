@@ -1,5 +1,10 @@
 # Custom Neovim Keymaps
 
+## General
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+|`:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
+
 ## xclip
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
