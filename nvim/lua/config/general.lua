@@ -81,11 +81,10 @@ vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
 
 -- Exit To Alpha Dashboard
 vim.keymap.set("n", "<leader>T", function()
-  local bufcount = #vim.fn.getbufinfo({ buflisted = 1 })
-  if bufcount <= 1 then
-    vim.cmd("Alpha")
-  else
-    vim.cmd("bd")
+  local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+  for _, buf in ipairs(buffers) do
+    vim.cmd("bd! " .. buf.bufnr)
   end
-end, { desc = "Close buffer or go to Alpha dashboard" })
+  vim.cmd("Alpha")
+end, { desc = "Close all buffers and go to Alpha dashboard" })
 
