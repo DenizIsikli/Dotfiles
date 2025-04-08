@@ -78,3 +78,14 @@ vim.diagnostic.config({
 vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
+
+-- Exit To Alpha Dashboard
+vim.keymap.set("n", "<leader>q", function()
+  local bufcount = #vim.fn.getbufinfo({ buflisted = 1 })
+  if bufcount <= 1 then
+    vim.cmd("Alpha")
+  else
+    vim.cmd("bd")
+  end
+end, { desc = "Close buffer or go to Alpha dashboard" })
+
