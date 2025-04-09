@@ -91,3 +91,6 @@ end, { desc = "Close all buffers and go to Alpha dashboard" })
 -- Remove Dot Function
 vim.keymap.set("n", ".", "<Nop>", { noremap = true })
 
+-- Echo Current File Path
+vim.api.nvim_set_keymap('n', '<leader>½', ':echo expand("%:p:h")<CR>', { noremap = true, silent = true })
+

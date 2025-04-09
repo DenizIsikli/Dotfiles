@@ -4,6 +4,7 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 |`:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
+|`:echo expand("%:p:h")<CR>`    | `<leader>½` | Normal | Show current file path |
 
 ## xclip
 | Command | Keymap | Mode | Description |
