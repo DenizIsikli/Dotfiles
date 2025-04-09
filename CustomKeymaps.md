@@ -13,12 +13,15 @@
 | `+d`    | `<leader>q`| Visual | Copy and delete |
 | `:%y+<CR>`| `<leader>Y`| Normal | Copy entire file |
 
-## Window Resizing 
-#### Will resize terminal if only one window is open and you decrease the window size
-| Command | Keymap | Mode | Description |
-|---------|--------|------|-------------|
-| `:resize +5<CR>`| `<leader>6`| Normal | Increase window height by 5 lines |
-| `:resize -5<CR>`| `<leader>5`| Normal | Decrease window height by 5 lines |
+## Window Resizing  
+#### Resize the currently active split window (code or terminal). Works seamlessly with multiple splits.  
+
+| Command                    | Keymap   | Mode   | Description                         |
+|----------------------------|----------|--------|-------------------------------------|
+| `:resize +5`               | `<C-k>`  | Normal | Increase window **height** by 5 lines (resize upward) |
+| `:resize -5`               | `<C-j>`  | Normal | Decrease window **height** by 5 lines (resize downward) |
+| `:vertical resize +5`      | `<C-l>`  | Normal | Increase window **width** by 5 columns (resize right) |
+| `:vertical resize -5`      | `<C-h>`  | Normal | Decrease window **width** by 5 columns (resize left)  |
 
 ## Neovim Window Navigation
 | Command | Keymap | Mode | Description |
