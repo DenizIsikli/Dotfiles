@@ -5,6 +5,8 @@
 |---------|--------|------|-------------|
 |`:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
 |`:echo expand("%:p:h")<CR>`    | `<leader>½` | Normal | Show current file path |
+|`>gv`   | `>` | Visual | Indent and keep selection |
+|`<gv`   | `<` | Visual | Outdent and keep selection |
 
 ## xclip
 | Command | Keymap | Mode | Description |
@@ -66,8 +68,8 @@
 ## Telescope
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `select_horizontal`             | `<C-w>`   | Insert/Normal | Open file in horizontal split  |
-| `select_vertical`               | `<C-r>`   | Insert/Normal | Open file in vertical split    |
+| `select_horizontal`             | `<C-j>`   | Insert/Normal | Open file in horizontal split  |
+| `select_vertical`               | `<C-k>`   | Insert/Normal | Open file in vertical split    |
 | `select_tab`                    | `<C-t>`   | Insert/Normal | Open file in new tab
 | `<cmd>Telescope find_files<CR>`| `<leader>3`| Normal | Find files |
 | `<cmd>Telescope oldfiles<CR>`| `<leader>1`| Normal | Open recent files |
