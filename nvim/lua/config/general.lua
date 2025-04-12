@@ -113,3 +113,9 @@ vim.keymap.set("n", ".", "<Nop>", { noremap = true })
 -- Echo Current File Path
 vim.api.nvim_set_keymap('n', '<leader>½', ':echo expand("%:p:h")<CR>', { noremap = true, silent = true })
 
+-- Move Marked Lines
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
+
+-- Disable 'K' Keymap
+vim.keymap.set({ 'n', 'v' }, 'K', '<nop>')
