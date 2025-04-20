@@ -119,3 +119,7 @@ vim.keymap.set('v', '<', '<gv')
 
 -- Disable 'K' Keymap
 vim.keymap.set({ 'n', 'v' }, 'K', '<nop>')
+
+-- Auto-Indent
+vim.keymap.set('i', '<C-F>', '<C-O>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-F>', '==', { noremap = true, silent = true })

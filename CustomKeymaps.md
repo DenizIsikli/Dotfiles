@@ -3,10 +3,12 @@
 ## General
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-|`:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
-|`:echo expand("%:p:h")<CR>`    | `<leader>½` | Normal | Show current file path |
-|`>gv`   | `>` | Visual | Indent and keep selection |
-|`<gv`   | `<` | Visual | Outdent and keep selection |
+| `:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
+| `:echo expand("%:p:h")<CR>`    | `<leader>½` | Normal | Show current file path |
+| `>gv`   | `>` | Visual | Indent and keep selection |
+| `<gv`   | `<` | Visual | Outdent and keep selection |
+| `<C-O>==` | `<C-F>` | Insert | Aligns the current line |
+| `==` | `<C-F>` | Normal | Aligns the current line |
 
 ## xclip
 | Command | Keymap | Mode | Description |
