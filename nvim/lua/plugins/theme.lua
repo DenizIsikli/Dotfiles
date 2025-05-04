@@ -4,6 +4,8 @@
 --   return { "sainnhe/gruvbox-material", config = configure_gruvbox }
 -- Monoglow:
 --   return { "wnkz/monoglow.nvim", config = configure_monoglow }
+-- Miasma:
+--  return { "xero/miasma.nvim", config = configure_miasma }
 
 -- Gruvbox Material setup
 local function configure_gruvbox()
@@ -35,11 +37,17 @@ local function configure_monoglow()
     vim.cmd("colorscheme monoglow") -- or monoglow-z, monoglow-lack, monoglow-void
 end
 
+-- Miasma setup
+local function configure_miasma()
+    vim.o.termguicolors = true
+    vim.cmd("colorscheme miasma")
+end
+
 -- Currently using Monoglow:
 return {
-    "wnkz/monoglow.nvim",
+    "xero/miasma.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_monoglow
+    config = configure_miasma
 }
 

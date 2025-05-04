@@ -70,10 +70,46 @@ return {
             return require("lualine.themes._monoglow").get()
         end
 
+        -- Miasma LuaLine Theme
+        local function miasma_theme()
+            local base = require('lualine.themes.gruvbox_dark')  -- use as a base
+
+            local new_colors = {
+                normal  = '#5f875f',  -- green
+                insert  = '#78824b',  -- blue-ish
+                command = '#c9a554',  -- cyan
+                visual  = '#bb7744',  -- magenta
+                white   = '#d7c483',  -- bright white
+                black   = '#222222',  -- background
+                fg      = '#c2c2b0',  -- main foreground
+            }
+
+            base.normal.a.bg = new_colors.normal
+            base.normal.a.fg = new_colors.black
+            base.insert.a.bg = new_colors.insert
+            base.insert.a.fg = new_colors.black
+            base.visual.a.bg = new_colors.visual
+            base.visual.a.fg = new_colors.black
+
+            base.command = {
+                a = {
+                    gui = 'bold',
+                    bg = new_colors.command,
+                    fg = new_colors.black,
+                },
+            }
+
+            base.inactive.a.bg = new_colors.black
+            base.inactive.a.fg = '#666666'  -- bright black
+
+            return base
+        end
+
         -- Set theme
         -- local theme = solarized_light_theme() -- Solarized Light Theme
         -- local theme = gruvbox_dark_theme() -- Gruvbox Dark Theme
-        local theme = monoglow_theme() -- Monoglow Theme
+        -- local theme = monoglow_theme() -- Monoglow Theme
+        local theme = miasma_theme()
 
         -- Lualine setup functions
         local function custom_lualine_setup()

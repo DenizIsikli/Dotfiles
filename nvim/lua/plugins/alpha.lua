@@ -6,9 +6,13 @@ return {
         local alpha = require('alpha')
         local dashboard = require('alpha.themes.dashboard')
 
+        local red_alpha = "#fb4934"
+        local green_alpha = "#53F665"
+        local miasma_alpha = "#5f875f"
+
         -- Define custom highlight group for the header
         vim.cmd([[
-            highlight AlphaHeader guifg=#fb4934
+            highlight AlphaHeader guifg=#5f875f
         ]])
 
         -- Set header with custom highlight group
