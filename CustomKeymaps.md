@@ -60,7 +60,13 @@
 ## LSP
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `<cmd>lua vim.lsp.buf.definition()<CR>`| `gd`| Normal | Go to definition |
+| `vim.lsp.buf.definition()`          | `gd`   | Normal | Go to definition |
+| `vim.lsp.buf.implementation()`     | `gi`   | Normal | Go to implementation |
+| `vim.lsp.buf.references()`         | `gr`   | Normal | Go to references |
+| `vim.lsp.buf.hover()`              | `K`    | Normal | Show hover information |
+| `vim.lsp.buf.rename()`             | `<leader>rn` | Normal | Rename symbol under cursor |
+| `vim.cmd("vsplit"); vim.lsp.buf.definition()` | `god`  | Normal | Open definition in vertical split |
+| `vim.cmd("vsplit"); vim.lsp.buf.implementation()` | `goi`  | Normal | Open implementation in vertical split |
 
 ## Oil
 | Command | Keymap | Mode | Description |

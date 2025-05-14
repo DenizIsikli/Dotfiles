@@ -36,12 +36,23 @@ return {
         local map = function(mode, lhs, rhs)
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
         end
-        map("n", "gd", vim.lsp.buf.definition)
-        map("n", "K", vim.lsp.buf.hover)
-        map("n", "gi", vim.lsp.buf.implementation)
-        map("n", "<leader>rn", vim.lsp.buf.rename)
-        map("n", "<leader>ca", vim.lsp.buf.code_action)
-        map("n", "gr", vim.lsp.buf.references)
+        map("n", "gd", vim.lsp.buf.definition) -- Go to definition
+        map("n", "gi", vim.lsp.buf.implementation) -- Go to implementation
+        map("n", "gr", vim.lsp.buf.references) -- Go to references
+        map("n", "K", vim.lsp.buf.hover) -- Show hover information
+        map("n", "<leader>rn", vim.lsp.buf.rename) -- Rename buffer
+
+        -- Open Definition (Split Window)
+        map("n", "god", function()
+          vim.cmd("vsplit")
+          vim.lsp.buf.definition()
+        end)
+
+        -- Open Implementation (Split Window)
+        map("n", "goi", function()
+          vim.cmd("vsplit")
+          vim.lsp.buf.implementation()
+        end)
       end
 
       -- Language servers
