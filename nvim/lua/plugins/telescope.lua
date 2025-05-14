@@ -11,13 +11,13 @@ return {
             defaults = {
                 mappings = {
                     i = {  -- Insert mode mappings
-                        ["<C-j>"] = "select_horizontal",  -- Open in horizontal split
-                        ["<C-k>"] = "select_vertical",    -- Open in vertical split
+                        ["<C-k>"] = "select_horizontal",  -- Open in horizontal split
+                        ["<C-j>"] = "select_vertical",    -- Open in vertical split
                         ["<C-t>"] = "select_tab",         -- Open in new tab
                     },
                     n = {  -- Normal mode mappings
-                        ["<C-j>"] = "select_horizontal",
-                        ["<C-k>"] = "select_vertical",
+                        ["<C-k>"] = "select_horizontal",
+                        ["<C-j>"] = "select_vertical",
                         ["<C-t>"] = "select_tab",
                     },
                 },

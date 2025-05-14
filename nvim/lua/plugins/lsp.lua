@@ -42,16 +42,28 @@ return {
         map("n", "K", vim.lsp.buf.hover) -- Show hover information
         map("n", "<leader>rn", vim.lsp.buf.rename) -- Rename symbol
 
-        -- Open Definition (Split Window)
-        map("n", "god", function()
-          vim.cmd("vsplit")
-          vim.lsp.buf.definition()
+        -- Open Definition (Split Window Vertically)
+        map("n", "gdj", function()
+            vim.cmd("vsplit")
+            vim.lsp.buf.definition()
         end)
 
-        -- Open Implementation (Split Window)
-        map("n", "goi", function()
-          vim.cmd("vsplit")
-          vim.lsp.buf.implementation()
+        -- Open Definition (Split Window Horizontally)
+        map("n", "gdk", function()
+            vim.cmd("split")
+            vim.lsp.buf.definition()
+        end)
+
+        -- Open Implementation (Split Window Vertically)
+        map("n", "gij", function()
+            vim.cmd("vsplit")
+            vim.lsp.buf.implementation()
+        end)
+
+        -- Open Implementation (Split Window Horizontally)
+        map("n", "gik", function()
+            vim.cmd("split")
+            vim.lsp.buf.implementation()
         end)
       end
 

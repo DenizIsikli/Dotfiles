@@ -60,13 +60,15 @@
 ## LSP
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `vim.lsp.buf.definition()`          | `gd`   | Normal | Go to definition |
-| `vim.lsp.buf.implementation()`     | `gi`   | Normal | Go to implementation |
-| `vim.lsp.buf.references()`         | `gr`   | Normal | Go to references |
-| `vim.lsp.buf.hover()`              | `K`    | Normal | Show hover information |
-| `vim.lsp.buf.rename()`             | `<leader>rn` | Normal | Rename symbol under cursor |
-| `vim.cmd("vsplit"); vim.lsp.buf.definition()` | `god`  | Normal | Open definition in vertical split |
-| `vim.cmd("vsplit"); vim.lsp.buf.implementation()` | `goi`  | Normal | Open implementation in vertical split |
+| `vim.lsp.buf.definition()`        | `gd`    | Normal | Go to definition |
+| `vim.lsp.buf.implementation()`    | `gi`    | Normal | Go to implementation |
+| `vim.lsp.buf.references()`        | `gr`    | Normal | Go to references |
+| `vim.lsp.buf.hover()`             | `K`     | Normal | Show hover information |
+| `vim.lsp.buf.rename()`            | `<leader>rn` | Normal | Rename symbol |
+| `vsplit + vim.lsp.buf.definition()` | `gdj`   | Normal | Open definition in vertical split |
+| `split + vim.lsp.buf.definition()`  | `gdk`   | Normal | Open definition in horizontal split |
+| `vsplit + vim.lsp.buf.implementation()` | `gij` | Normal | Open implementation in vertical split |
+| `split + vim.lsp.buf.implementation()`  | `gik` | Normal | Open implementation in horizontal split |
 
 ## Oil
 | Command | Keymap | Mode | Description |
@@ -76,8 +78,8 @@
 ## Telescope
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `select_horizontal`             | `<C-j>`   | Insert/Normal | Open file in horizontal split  |
-| `select_vertical`               | `<C-k>`   | Insert/Normal | Open file in vertical split    |
+| `select_horizontal`             | `<C-k>`   | Insert/Normal | Open file in horizontal split  |
+| `select_vertical`               | `<C-j>`   | Insert/Normal | Open file in vertical split    |
 | `select_tab`                    | `<C-t>`   | Insert/Normal | Open file in new tab
 | `<cmd>Telescope find_files<CR>`| `<leader>3`| Normal | Find files |
 | `<cmd>Telescope oldfiles<CR>`| `<leader>1`| Normal | Open recent files |
