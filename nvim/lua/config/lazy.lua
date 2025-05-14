@@ -27,14 +27,12 @@ require('lazy').setup({
   require('plugins.gitsigns'),
   -- Lazygit
   require('plugins.lazygit'),
-  -- LSP Configurations
+  -- LSP Configurations (Mason + LSPConfig)
   require('plugins.lsp'),
   -- Lualine (Status Line)
   require('plugins.lualine'),
   -- Markdown Preview
   require('plugins.markdownpreview'),
-  -- Mason Neovim
-  require('plugins.mason'),
   -- Neo-Tree
   require('plugins.neotree'),
   -- Oil

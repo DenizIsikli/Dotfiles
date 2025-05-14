@@ -45,9 +45,9 @@ end
 
 -- Currently using Monoglow:
 return {
-    "xero/miasma.nvim",
+    "wnkz/monoglow.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_miasma
+    config = configure_monoglow
 }
 

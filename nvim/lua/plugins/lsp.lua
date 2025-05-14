@@ -1,142 +1,105 @@
--- LSP and Treesitter Configuration
+-- Mason, LSP and Completion Configuration
 return {
-    -- LSP Config
-    'neovim/nvim-lspconfig',
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "ts_ls",
+          "html",
+          "cssls",
+          "jsonls",
+          "pyright",
+          "clangd",
+          "tailwindcss",
+          "rust_analyzer",
+          "zls",
+        },
+        automatic_installation = true,
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+
+      -- Optional: Keybindings on LSP attach
+      local on_attach = function(_, bufnr)
+        local map = function(mode, lhs, rhs)
+          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
+        end
+        map("n", "gd", vim.lsp.buf.definition)
+        map("n", "K", vim.lsp.buf.hover)
+        map("n", "gi", vim.lsp.buf.implementation)
+        map("n", "<leader>rn", vim.lsp.buf.rename)
+        map("n", "<leader>ca", vim.lsp.buf.code_action)
+        map("n", "gr", vim.lsp.buf.references)
+      end
+
+      -- Language servers
+      local servers = {
+        lua_ls = {},
+        ts_ls = {},
+        html = {},
+        cssls = {},
+        jsonls = {},
+        pyright = {},
+        clangd = {},
+        tailwindcss = {},
+        rust_analyzer = {},
+        zls = {},
+      }
+
+      for name, config in pairs(servers) do
+        config.on_attach = on_attach
+        config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+        lspconfig[name].setup(config)
+      end
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
     dependencies = {
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-        'nvim-treesitter/nvim-treesitter', -- Treesitter for enhanced syntax highlighting
-        'hrsh7th/nvim-cmp', -- Completion plugin
-        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-        'L3MON4D3/LuaSnip', -- Snippets plugin
-        'saadparwaiz1/cmp_luasnip', -- Snippet completions
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
     },
     config = function()
-        local lspconfig = require('lspconfig')
-        local mason = require('mason')
-        local mason_lspconfig = require('mason-lspconfig')
-        local cmp = require('cmp')
-        local luasnip = require('luasnip')
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
-        -- Initialize mason
-        mason.setup()
-        mason_lspconfig.setup({
-            ensure_installed = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer', 'ts_ls' },
-        })
+      require("luasnip.loaders.from_vscode").lazy_load()
 
-        -- nvim-cmp setup
-        cmp.setup({
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
-            mapping = cmp.mapping.preset.insert({
-                ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-t>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept completion with Enter
-            }),
-            sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-            },
-        })
-
-        -- Treesitter setup
-        require('nvim-treesitter.configs').setup {
-            ensure_installed = { 'lua', 'c', 'cpp', 'python', 'zig', 'rust', 'typescript', 'javascript' },
-            auto_install = false,
-            sync_install = false,
-            ignore_install = {},
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-        }
-
-        -- LSP on_attach function
-        local on_attach = function(client, bufnr)
-            local buf_set_keymap = vim.api.nvim_buf_set_keymap
-            local opts = { noremap=true, silent=true }
-            -- Keybinding for "Go to Definition"
-            buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        end
-
-        -- Capabilities for nvim-cmp
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-        -- LSP servers setup
-        local servers = { 'lua_ls', 'clangd', 'pyright', 'zls', 'rust_analyzer', 'ts_ls' }
-        for _, lsp in ipairs(servers) do
-            lspconfig[lsp].setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-                flags = {
-                    debounce_text_changes = 150,
-                }
-            }
-        end
-
-        -- Lua (lua_ls) specific setup
-        lspconfig.lua_ls.setup {
-            settings = {
-                Lua = {
-                    runtime = {
-                        version = 'LuaJIT',
-                        path = vim.split(package.path, ';')
-                    },
-                    diagnostics = {
-                        globals = { 'vim' }
-                    },
-                    workspace = {
-                        library = vim.api.nvim_get_runtime_file('', true),
-                        checkThirdParty = false
-                    },
-                    telemetry = {
-                        enable = false
-                    }
-                }
-            }
-        }
-
-        -- C/C++ (clangd) specific setup
-        lspconfig.clangd.setup {
-            cmd = { 'clangd', '--background-index' },
-        }
-
-        -- Rust (rust_analyzer) specific setup
-        lspconfig.rust_analyzer.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                ['rust-analyzer'] = {
-                    cargo = {
-                        allFeatures = true,
-                    },
-                    checkOnSave = {
-                        command = "clippy"
-                    },
-                    procMacro = {
-                        enable = true
-                    },
-                },
-            },
-        }
-
-        -- Python (pyright) specific setup
-        lspconfig.pyright.setup {}
-
-        -- Zig (zls) specific setup
-        lspconfig.zls.setup {}
-
-        -- TypeScript (tsserver) specific setup
-        lspconfig.ts_ls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            flags = {
-                debounce_text_changes = 150,
-            },
-        }
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<Tab>"] = cmp.mapping.select_next_item(),
+          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-Space>"] = cmp.mapping.complete(),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+      })
     end,
+  },
 }
+
