@@ -11,6 +11,10 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.laststatus = 3
+vim.o.foldcolumn = '1'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- Diagnostics
 vim.diagnostic.config({

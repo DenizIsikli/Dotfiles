@@ -47,4 +47,6 @@ require('lazy').setup({
   require('plugins.transparent'),
   -- Trouble
   require('plugins.trouble'),
+  -- Ufo (Fold Preview)
+  require('plugins.ufo'),
 })
