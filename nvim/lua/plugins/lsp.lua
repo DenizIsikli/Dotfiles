@@ -40,7 +40,7 @@ return {
         map("n", "gi", vim.lsp.buf.implementation) -- Go to implementation
         map("n", "gr", vim.lsp.buf.references) -- Go to references
         map("n", "K", vim.lsp.buf.hover) -- Show hover information
-        map("n", "<leader>rn", vim.lsp.buf.rename) -- Rename buffer
+        map("n", "<leader>rn", vim.lsp.buf.rename) -- Rename symbol
 
         -- Open Definition (Split Window)
         map("n", "god", function()
