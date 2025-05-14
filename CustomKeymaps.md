@@ -94,3 +94,8 @@
 |---------|--------|------|-------------|
 | `<cmd>Trouble diagnostics toggle<CR>`| `<leader>xx`| Normal | Diagnostics (Trouble) |
 | `<cmd>Trouble symbols toggle focus=false<CR>`| `<leader>xs`| Normal | Toggle (Trouble) |
+
+## Ufo
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `ufo#toggleFold()`| `za`| Normal | Toggle fold |
