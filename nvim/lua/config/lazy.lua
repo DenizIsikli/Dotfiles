@@ -17,6 +17,8 @@ require('lazy').setup({
   require('plugins.alpha'),
   -- Autopairs
   require('plugins.autopairs'),
+  -- Blankline
+  require('plugins.blankline'),
   -- Comment
   require('plugins.comment'),
   -- Copilot
