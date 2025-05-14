@@ -107,8 +107,8 @@ return {
 
         -- Set theme
         -- local theme = solarized_light_theme() -- Solarized Light Theme
-        -- local theme = gruvbox_dark_theme() -- Gruvbox Dark Theme
-        local theme = monoglow_theme() -- Monoglow Theme
+        local theme = gruvbox_dark_theme() -- Gruvbox Dark Theme
+        -- local theme = monoglow_theme() -- Monoglow Theme
         -- local theme = miasma_theme()
 
         -- Lualine setup functions

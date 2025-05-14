@@ -43,11 +43,10 @@ local function configure_miasma()
     vim.cmd("colorscheme miasma")
 end
 
--- Currently using Monoglow:
 return {
-    "wnkz/monoglow.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
-    config = configure_monoglow
+    config = configure_gruvbox,
 }
 
