@@ -8,61 +8,9 @@ return {
             return
         end
 
-        -- Solarized Light LuaLine Theme
-        local function solarized_light_theme()
-            local lualine_solarized_light = require("lualine.themes.solarized_light")
-            local new_colors = {
-                normal = "#073642",
-                insert = "#2aa198",
-                command = "#FFDA7B",
-                visual = "#FF61EF",
-                black = "#000000",
-            }
-
-            lualine_solarized_light.normal.a.bg = new_colors.normal
-            lualine_solarized_light.insert.a.bg = new_colors.insert
-            lualine_solarized_light.visual.a.bg = new_colors.visual
-
-            lualine_solarized_light.command = {
-                a = {
-                    gui = "bold",
-                    bg = new_colors.command,
-                    fg = new_colors.black,
-                },
-            }
-
-            return lualine_solarized_light
-        end
-
-        -- Gruvbox Dark LuaLine Theme
-        local function gruvbox_dark_theme()
-            local lualine_gruvbox_dark = require('lualine.themes.gruvbox_dark')
-            local new_colors = {
-                normal = '#3c3836',
-                insert = '#689d6a',
-                command = '#fb4934',
-                visual = '#fe8019',
-                white = '#ffffff',
-                black = '#000000',
-                pastel = '#ebdbb2',
-            }
-
-            lualine_gruvbox_dark.normal.a.bg = new_colors.normal
-            lualine_gruvbox_dark.normal.a.fg = new_colors.white
-            lualine_gruvbox_dark.insert.a.bg = new_colors.insert
-            lualine_gruvbox_dark.insert.a.fg = new_colors.white
-            lualine_gruvbox_dark.visual.a.bg = new_colors.visual
-            lualine_gruvbox_dark.visual.a.fg = new_colors.white
-
-            lualine_gruvbox_dark.command = {
-                a = {
-                    gui = 'bold',
-                    bg = new_colors.command,
-                    fg = new_colors.white,
-                },
-            }
-
-            return lualine_gruvbox_dark
+        -- Gruvbox Material LuaLine Theme
+        local function gruvbox_material_theme()
+            return require('lualine.themes.gruvbox-material')
         end
 
         -- Monoglow LuaLine Theme (default)
@@ -106,8 +54,7 @@ return {
         end
 
         -- Set theme
-        -- local theme = solarized_light_theme() -- Solarized Light Theme
-        local theme = gruvbox_dark_theme() -- Gruvbox Dark Theme
+        local theme = gruvbox_material_theme() -- Gruvbox Dark Theme
         -- local theme = monoglow_theme() -- Monoglow Theme
         -- local theme = miasma_theme()
 
