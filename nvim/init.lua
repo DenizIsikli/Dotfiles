@@ -4,6 +4,9 @@
 -- Windows
 vim.cmd('set runtimepath^=C:\\Users\\deniz\\AppData\\Local\\nvim\\lua\\config')
 
+-- Work (Windows)
+-- vim.cmd('set runtimepath^=C:\\Users\\deis\\AppData\\Local\\nvim\\lua\\config')
+
 require("config.directories")
 require("config.keymaps")
 require("config.plugins")
