@@ -95,6 +95,11 @@
 | `<cmd>Trouble diagnostics toggle<CR>`| `<leader>xx`| Normal | Diagnostics (Trouble) |
 | `<cmd>Trouble symbols toggle focus=false<CR>`| `<leader>xs`| Normal | Toggle (Trouble) |
 
+## Flash
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `require("flash").jump()`       | `/`     | Normal | Flash-powered jump search |
+
 ## Ufo
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
