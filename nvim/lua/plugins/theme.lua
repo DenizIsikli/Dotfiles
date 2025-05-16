@@ -49,4 +49,3 @@ return {
     priority = 1000,
     config = configure_gruvbox,
 }
-

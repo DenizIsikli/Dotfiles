@@ -15,3 +15,13 @@ vim.api.nvim_create_user_command('ConfigDir', "cd C:\\Users\\deniz\\AppData\\Loc
 -- User Commands for Navigation (Linux)
 -- vim.api.nvim_create_user_command('ProjectDir', "cd ~/Code", {})
 -- vim.api.nvim_create_user_command('ConfigDir', "cd ~/.config/nvim", {})
+
+---------------------------------------------------------------------------
+
+-- Default Directory on Startup (Work - Windows)
+-- vim.cmd [[cd C:\\Users\\deis\\Desktop\\Code]] -- Project Directory
+-- vim.cmd [[cd C:\\Users\\deis\\AppData\\Local\\nvim]] -- Config Directory
+
+-- User Commands for Navigation (Windows)
+-- vim.api.nvim_create_user_command('ProjectDir', "cd C:\\Users\\deis\\Desktop\\Code", {})
+-- vim.api.nvim_create_user_command('ConfigDir', "cd C:\\Users\\deis\\AppData\\Local\\nvim", {})

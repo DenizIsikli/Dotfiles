@@ -38,3 +38,13 @@ vim.keymap.set("n", ".", "<Nop>", { noremap = true })
 
 -- Show Current File Path
 vim.api.nvim_set_keymap('n', '<leader>½', ':echo expand("%:p:h")<CR>', { noremap = true, silent = true })
+
+-- Clear Search Highlight
+vim.api.nvim_set_keymap('n', '<leader>9', ':nohlsearch<CR>', { noremap = true, silent = true })
+
+-- Prevent Auto-Commenting New Lines
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove({ "o", "r" })
+  end,
+})

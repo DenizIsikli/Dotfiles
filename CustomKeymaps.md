@@ -99,3 +99,10 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `ufo#toggleFold()`| `za`| Normal | Toggle fold |
+
+## Search
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `:nohlsearch` | `<leader>9` | Normal | Clear search highlights |
+| `*` | `*` | Normal | Search **forward** for the word under cursor |
+| `#` | `#` | Normal | Search **backward** for the word under cursor |
