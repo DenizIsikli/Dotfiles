@@ -2,13 +2,23 @@
 return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
-    config = function()
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
+    },    config = function()
         local telescope = require('telescope')
+
+        -- Load extensions
+        telescope.load_extension('ui-select')
 
         -- Setup Telescope
         telescope.setup{
             defaults = {
+                layout_strategy = "vertical",
+                layout_config = {
+                    prompt_position = "top",
+                    mirror = true,
+                },
                 mappings = {
                     i = {  -- Insert mode mappings
                         ["<C-k>"] = "select_horizontal",  -- Open in horizontal split
@@ -78,9 +88,18 @@ return {
             }
         }
 
-        -- Keymap for <leader>p to search files
+        vim.cmd [[
+          highlight! TelescopePromptPrefix guifg=#fb4934
+          highlight! TelescopeSelection guibg=#3c3836 gui=bold
+          highlight! TelescopeMatching guifg=#fabd2f
+          highlight! TelescopeTitle guifg=#282828 guibg=#b8bb26 gui=bold
+          highlight! TelescopePromptTitle guibg=#fabd2f guifg=#282828 gui=bold
+          highlight! TelescopePreviewTitle guibg=#83a598 guifg=#282828 gui=bold
+          highlight! TelescopeResultsTitle guibg=#d3869b guifg=#282828 gui=bold
+        ]]
+
+        -- Keymaps
         vim.api.nvim_set_keymap('n', '<leader>3', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
-        -- Keymap for <leader>s to search old files
         vim.api.nvim_set_keymap('n', '<leader>1', '<cmd>Telescope oldfiles<CR>', { noremap = true, silent = true })
     end
 }

@@ -45,6 +45,9 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `:Neotree<CR>`| `<C-t>`| Normal | Toggle Neotree |
+| `open_vsplit` | `h` | Neo‑tree | Open file in **vertical** split (inside Neo‑tree) |
+| `open_split`  | `l` | Neo‑tree | Open file in **horizontal** split (inside Neo‑tree) |
+
 
 ## Comment
 | Command | Keymap | Mode | Description |
@@ -98,7 +101,7 @@
 ## Flash
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `require("flash").jump()`       | `/`     | Normal | Flash-powered jump search |
+| `require("flash").jump()`       | `<leader>fs`     | Normal | Flash-powered jump search |
 
 ## Ufo
 | Command | Keymap | Mode | Description |

@@ -20,7 +20,10 @@ return {
             window  = {
                 position = "left",
                 width = 30,
-                mappings = {},
+                mappings = {
+                    ["h"] = "open_vsplit",
+                    ["l"] = "open_split",
+                },
             },
             default_component_configs = {
                 container = {
