@@ -19,6 +19,7 @@ return {
                     prompt_position = "top",
                     mirror = true,
                 },
+                file_ignore_patterns = { "%.exe$", "%.dll$", "node_modules" },
                 mappings = {
                     i = {  -- Insert mode mappings
                         ["<C-k>"] = "select_horizontal",  -- Open in horizontal split
