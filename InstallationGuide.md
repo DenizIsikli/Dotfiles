@@ -44,6 +44,25 @@ $HOME/vimfiles/pack/github/start/copilot.vim</code></pre>
 <pre><code>sudo apt update</code></pre>
 <pre><code>sudo apt-get install -y xclip</code></pre>
 
+<h2>Fd-find (fd)</h2>
+<p>Fd-find Windows (Winget):</p>
+<pre><code>winget install fd</code></pre>
+
+<p>Fd-find Windows (Chocolatey):</p>
+<pre><code>choco install fd</code></pre>
+
+<p>Fd-find Linux (Debian):</p>
+<pre><code>sudo apt-get install fd-find</code></pre>
+
+<h2>Ripgrep (rg)</h2>
+<p>Ripgrep Windows (Winget):</p>
+<pre><code>winget install ripgrep</code></pre>
+
+<p>Ripgrep Widnows (Chocolatey):</p>
+<pre><code>choco install ripgrep</code></pre>
+
+<p>Ripgrep Linux (Debian):</p>
+<pre><code>sudo apt-get install ripgrep</code></pre>
 </body>
 </html>
 
