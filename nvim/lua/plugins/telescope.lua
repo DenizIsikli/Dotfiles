@@ -77,6 +77,7 @@ return {
                     end
                 },
                 oldfiles = {
+                    hidden = true,
                     attach_mappings = function(_, map)
                         local actions = require('telescope.actions')
                         local action_state = require('telescope.actions.state')

@@ -9,6 +9,6 @@ vim.cmd('set runtimepath^=C:\\Users\\deniz\\AppData\\Local\\nvim\\lua\\config')
 
 require("config.directories")
 require("config.keymaps")
+require("config.lazy")
 require("config.settings")
 require("config.statusline")
-require("config.lazy")
