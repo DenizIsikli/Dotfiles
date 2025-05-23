@@ -46,7 +46,7 @@ $HOME/vimfiles/pack/github/start/copilot.vim</code></pre>
 
 <h2>Fd-find (fd)</h2>
 <p>Fd-find Windows (Winget):</p>
-<pre><code>winget install fd</code></pre>
+<pre><code>winget install sharkdp.fd</code></pre>
 
 <p>Fd-find Windows (Chocolatey):</p>
 <pre><code>choco install fd</code></pre>
@@ -56,12 +56,13 @@ $HOME/vimfiles/pack/github/start/copilot.vim</code></pre>
 
 <h2>Ripgrep (rg)</h2>
 <p>Ripgrep Windows (Winget):</p>
-<pre><code>winget install ripgrep</code></pre>
+<pre><code>winget install BurntSushi.ripgrep.MSVC</code></pre>
 
 <p>Ripgrep Widnows (Chocolatey):</p>
 <pre><code>choco install ripgrep</code></pre>
 
 <p>Ripgrep Linux (Debian):</p>
-<pre><code>sudo apt-get install ripgrep</code></pre>
+<pre><code>curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb</code></pre>
+<pre><code>sudo dpkg -i ripgrep_14.1.0-1_amd64.deb</code></pre>
 </body>
 </html>
