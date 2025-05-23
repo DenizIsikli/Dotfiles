@@ -65,4 +65,3 @@ $HOME/vimfiles/pack/github/start/copilot.vim</code></pre>
 <pre><code>sudo apt-get install ripgrep</code></pre>
 </body>
 </html>
-

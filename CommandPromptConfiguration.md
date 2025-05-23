@@ -62,4 +62,3 @@
 ## Nerd Font
 
 FiraCode - https://github.com/tonsky/FiraCode
-
