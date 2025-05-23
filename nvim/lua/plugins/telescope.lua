@@ -19,7 +19,22 @@ return {
                     prompt_position = "top",
                     mirror = true,
                 },
-                file_ignore_patterns = { "%.exe$", "%.dll$", "node_modules" },
+                file_ignore_patterns = {
+                    "%.git/",
+                    "^.*/%.git/.*",
+                    "%.exe$",
+                    "%.dll$",
+                    "%.cache",
+                    "%.o",
+                    "%.a",
+                    "%.out",
+                    "%.class",
+                    "%.pdf",
+                    "%.mkv",
+                    "%.mp4",
+                    "%.zip",
+                    "node_modules",
+                },
                 mappings = {
                     i = {  -- Insert mode mappings
                         ["<C-k>"] = "select_horizontal",  -- Open in horizontal split
@@ -35,6 +50,7 @@ return {
             },
             pickers = {
                 find_files = {
+                    hidden = true,
                     attach_mappings = function(_, map)
                         local actions = require('telescope.actions')
                         local action_state = require('telescope.actions.state')

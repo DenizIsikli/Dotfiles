@@ -35,5 +35,9 @@ return {
         -- Transparent NeoTree 
         vim.cmd([[ highlight NeoTreeNormal guibg=NONE ctermbg=NONE ]])
         vim.cmd([[ highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE ]])
+
+        vim.g.nvim_tree_auto_open = 1
+        vim.g.nvim_tree_indent_markers = 1
+        vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
     end,
 }
