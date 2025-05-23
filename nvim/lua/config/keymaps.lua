@@ -48,3 +48,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.opt.formatoptions:remove({ "o", "r" })
   end,
 })
+
+-- Normal mode: Move line up/down with Alt + Up/Down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+
+-- Insert mode: Move line up/down with Alt + Up/Down
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
+
+-- Visual mode: Move selected lines up/down with Alt + Up/Down
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })

@@ -41,13 +41,15 @@
 | `g_` | `t` | Normal | Move to the end of the line |
 | `^` | `e` | Normal | Move to the first non-blank character of the line |
 
-## Neotree
+## Line Movement  
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `:Neotree<CR>`| `<C-t>`| Normal | Toggle Neotree |
-| `open_vsplit` | `h` | Neo‑tree | Open file in **vertical** split (inside Neo‑tree) |
-| `open_split`  | `l` | Neo‑tree | Open file in **horizontal** split (inside Neo‑tree) |
-
+| `:m .+1<CR>==` | `<A-j>` | Normal | Move current line **down** |
+| `:m .-2<CR>==` | `<A-k>` | Normal | Move current line **up** |
+| `<Esc>:m .+1<CR>==gi` | `<A-j>` | Insert | Move current line **down** and re-enter insert mode |
+| `<Esc>:m .-2<CR>==gi` | `<A-k>` | Insert | Move current line **up** and re-enter insert mode |
+| `:m '>+1<CR>gv=gv` | `<A-j>` | Visual | Move selected lines **down** |
+| `:m '<-2<CR>gv=gv` | `<A-k>` | Visual | Move selected lines **up** |
 
 ## Comment
 | Command | Keymap | Mode | Description |
@@ -59,6 +61,11 @@
 |---------|--------|------|-------------|
 | `copilot#Accept("<CR>")`| `<C-J>`| Insert | Accept GitHub Copilot suggestion |
 | `:CopilotToggle<CR>`| `<leader>ct`| Normal | Toggle GitHub Copilot |
+
+## Flash
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `require("flash").jump()`       | `<leader>fs`     | Normal | Flash-powered jump search |
 
 ## LSP
 | Command | Keymap | Mode | Description |
@@ -77,6 +84,13 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `Oil Parent Directory`| `+`| Normal | Open parent directory |
+
+## Neotree
+| Command | Keymap | Mode | Description |
+|---------|--------|------|-------------|
+| `:Neotree<CR>`| `<C-t>`| Normal | Toggle Neotree |
+| `open_vsplit` | `h` | Neo‑tree | Open file in **vertical** split (inside Neo‑tree) |
+| `open_split`  | `l` | Neo‑tree | Open file in **horizontal** split (inside Neo‑tree) |
 
 ## Telescope
 | Command | Keymap | Mode | Description |
@@ -97,11 +111,6 @@
 |---------|--------|------|-------------|
 | `<cmd>Trouble diagnostics toggle<CR>`| `<leader>xx`| Normal | Diagnostics (Trouble) |
 | `<cmd>Trouble symbols toggle focus=false<CR>`| `<leader>xs`| Normal | Toggle (Trouble) |
-
-## Flash
-| Command | Keymap | Mode | Description |
-|---------|--------|------|-------------|
-| `require("flash").jump()`       | `<leader>fs`     | Normal | Flash-powered jump search |
 
 ## Ufo
 | Command | Keymap | Mode | Description |
