@@ -36,8 +36,8 @@ vim.keymap.set({ 'n', 'v' }, 'K', '<nop>')
 -- Dot is NOP
 vim.keymap.set("n", ".", "<Nop>", { noremap = true })
 
--- Show Current File Path
-vim.api.nvim_set_keymap('n', '<leader>½', ':echo expand("%:p:h")<CR>', { noremap = true, silent = true })
+-- Show And Copy Current File Path
+vim.api.nvim_set_keymap('n', '<leader>½', [[:let @+ = expand('%:p:h') | echo @+<CR>]], { noremap = true, silent = true })
 
 -- Clear Search Highlight
 vim.api.nvim_set_keymap('n', '<leader>9', ':nohlsearch<CR>', { noremap = true, silent = true })
