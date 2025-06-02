@@ -1,7 +1,6 @@
 -- Theme Configuration
 
 -- Theme(s) List: Gruvbox Material, Monoglow, Everforest
-
 -- Gruvbox: "sainnhe/gruvbox-material",
 -- Monoglow: "wnkz/monoglow.nvim",
 -- Everforest: "sainnhe/everforest",
@@ -26,8 +25,9 @@ local function configure_monoglow()
     vim.cmd.colorscheme("monoglow")
 end
 
--- Miasma setup
+-- Everforest setup
 local function configure_everforest()
+    vim.o.background = "dark"
     vim.g.everforest_enable_italic = 1
     vim.cmd.colorscheme("everforest")
 end
