@@ -60,3 +60,7 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = t
 -- Visual mode: Move selected lines up/down with Alt + Up/Down
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+-- Insert blank line above and below the current line
+vim.keymap.set("n", "<C-i>", ":put! =''<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-o>", ":put =''<CR>", { noremap = true, silent = true })
