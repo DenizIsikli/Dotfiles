@@ -4,6 +4,7 @@
 -- Gruvbox: "sainnhe/gruvbox-material",
 -- Monoglow: "wnkz/monoglow.nvim",
 -- Everforest: "sainnhe/everforest",
+-- One Monokai: "cpea2506/one_monokai.nvim"
 
 -- Gruvbox Material setup
 local function configure_gruvbox()
@@ -32,9 +33,22 @@ local function configure_everforest()
     vim.cmd.colorscheme("everforest")
 end
 
+-- One Monokai setup
+local function configure_one_monokai()
+    vim.o.termguicolors = true
+    vim.o.background = "dark"
+
+    require("one_monokai").setup({
+        transparent = true,
+        italics = true,
+    })
+
+    vim.cmd.colorscheme("one_monokai")
+end
+
 return {
-    "sainnhe/everforest",
+    "cpea2506/one_monokai.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_everforest,
+    config = configure_one_monokai
 }
