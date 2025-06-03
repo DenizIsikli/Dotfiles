@@ -1,21 +1,29 @@
 -- Copilot Configuration
 return {
-  'github/copilot.vim',
+  "zbirenbaum/copilot.lua",
+  event = "InsertEnter",
   config = function()
-    vim.g.copilot_no_tab_map = true
-    vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true, script = true })
-
-    vim.api.nvim_create_user_command('CopilotToggle', function ()
-        vim.g.copilot_enabled = not vim.g.copilot_enabled
-        if vim.g.copilot_enabled then
-            vim.cmd('Copilot disable')
-            print("Copilot Disabled")
-        else
-            vim.cmd('Copilot enable')
-            print("Copilot Enabled")
-        end
-    end, { nargs = 0})
-
-    vim.api.nvim_set_keymap("n", "<leader>ct", ":CopilotToggle<CR>", { noremap = true, silent = true })
+    require("copilot").setup({
+      suggestion = {
+        auto_trigger = true,
+        debounce = 100,
+        enabled = true,
+        keymap = { accept = "<C-j>" },
+      }
+    })
   end,
+  keys = {
+    {
+      "<leader>ct",
+      function()
+        if require("copilot.client").is_disabled() then
+          require("copilot.command").enable()
+        else
+          require("copilot.suggestion").dismiss()
+          require("copilot.command").disable()
+        end
+      end,
+      desc = "Toggle Copilot",
+    },
+  },
 }
