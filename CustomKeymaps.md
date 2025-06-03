@@ -5,6 +5,7 @@
 |---------|--------|------|-------------|
 | `:bd`   | `<leader>T` | Normal | Close buffer or go to Alpha dashboard |
 | `:let @+ = expand('%:p:h') \| echo @+<CR>` | `<leader>½` | Normal | Copy and show current file path |
+| `:let @+ = expand('%:p') \| echo @+<CR>`    | `<leader>§`    | Normal | Copy and show full file path with filename |
 | `>gv`   | `>` | Visual | Indent and keep selection |
 | `<gv`   | `<` | Visual | Outdent and keep selection |
 | `<C-O>==` | `<C-F>` | Insert | Aligns the current line |
