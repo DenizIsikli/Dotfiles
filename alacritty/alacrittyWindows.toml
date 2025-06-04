@@ -15,7 +15,7 @@ multiplier = 3
 normal = { family = "FiraMono Nerd Font", style = "Regular" }
 bold = { family = "FiraMono Nerd Font", style = "Bold" }
 italic = { family = "FiraMono Nerd Font", style = "Italic" }
-size = 12.0
+size = 11.0
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 
@@ -48,4 +48,4 @@ white = "0xebdbb2"
 style = "Block"
 
 [terminal]
-shell = { program = "tmux" }
+shell = { program = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", args = ["-NoLogo"] }
