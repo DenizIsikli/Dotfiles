@@ -1,5 +1,5 @@
 #!/bin/bash
-# To run the script: chmod +x deploy.sh && ./deploy.sh
+# To run the script: chmod +x deployLinux.sh && ./deployLinux.sh
 
 # Source paths
 SOURCE_PATH="/home/deniz/.config/nvim"

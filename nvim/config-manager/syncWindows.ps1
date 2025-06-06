@@ -1,4 +1,4 @@
-# To run the script: .\sync.ps1
+# To run the script: .\syncWindows.ps1
 
 # Source paths (repo)
 $SOURCE_PATH = "C:\Users\deniz\Desktop\Code\Dotfiles\nvim"
