@@ -51,7 +51,7 @@ return {
             pickers = {
                 find_files = {
                     hidden = true,
-                    find_command = { "fd", "--type", "f", "--color", "never", "--no-require-git" },
+                    find_command = { "fd", "--type", "f", "--hidden", "--color", "never" },
                     attach_mappings = function(_, map)
                         local actions = require('telescope.actions')
                         local action_state = require('telescope.actions.state')
@@ -79,7 +79,7 @@ return {
                 },
                 oldfiles = {
                     hidden = true,
-                    find_command = { "fd", "--type", "f", "--color", "never", "--no-require-git" },
+                    find_command = { "fd", "--type", "f", "--hidden", "--color", "never" },
                     attach_mappings = function(_, map)
                         local actions = require('telescope.actions')
                         local action_state = require('telescope.actions.state')
