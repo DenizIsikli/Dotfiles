@@ -37,8 +37,8 @@ vim.keymap.set({ 'n', 'v' }, 'K', '<nop>')
 vim.keymap.set("n", ".", "<Nop>", { noremap = true })
 
 -- Show And Copy Current File Path | Current File Path With Filename
-vim.api.nvim_set_keymap('n', '<leader>½', [[:let @+ = expand('%:p:h') | echo "Copied folder path!"<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>§', [[:let @+ = expand('%:p') | echo "Copied full file path!"<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>½', [[:let @+ = expand('%:p:h') | echo expand('%:p:h')<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>§', [[:let @+ = expand('%:p') | echo expand('%:p')<CR>]], { noremap = true, silent = true })
 
 -- Clear Search Highlight
 vim.api.nvim_set_keymap('n', '<leader>9', ':nohlsearch<CR>', { noremap = true, silent = true })
