@@ -5,7 +5,8 @@ return {
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-    },    config = function()
+    },
+    config = function()
         local telescope = require('telescope')
 
         -- Load extensions
@@ -14,37 +15,36 @@ return {
         -- Setup Telescope
         telescope.setup{
             defaults = {
-                layout_strategy = "vertical",
                 layout_config = {
-                    prompt_position = "top",
+                  prompt_position = 'top',
+                  horizontal = {
+                    mirror = false,
+                    preview_cutoff = 100,
+                    preview_width = 0.65,
+                  },
+                  vertical = {
                     mirror = true,
+                    preview_cutoff = 0.4,
+                  },
+                  flex = {
+                    flip_columns = 200,
+                  },
+                  height = 0.95,
+                  width = 0.90,
                 },
                 file_ignore_patterns = {
-                    "%.git/",
-                    "^.*/%.git/.*",
-                    "%.exe$",
-                    "%.dll$",
-                    "%.cache",
-                    "%.o",
-                    "%.a",
-                    "%.out",
-                    "%.class",
-                    "%.pdf",
-                    "%.mkv",
-                    "%.mp4",
-                    "%.zip",
-                    "node_modules",
+                    "%.git/", "^.*/%.git/.*", "%.exe$", "%.dll$", "%.cache", "%.o", "%.a",
+                    "%.out", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip", "node_modules",
                 },
                 mappings = {
                     i = {  -- Insert mode mappings
-                        ["<C-k>"] = "select_horizontal",  -- Open in horizontal split
-                        ["<C-j>"] = "select_vertical",    -- Open in vertical split
-                        ["<C-t>"] = "select_tab",         -- Open in new tab
-                    },
-                    n = {  -- Normal mode mappings
-                        ["<C-k>"] = "select_horizontal",
-                        ["<C-j>"] = "select_vertical",
-                        ["<C-t>"] = "select_tab",
+                        ["<C-l>"] = "select_horizontal", -- Open in horizontal split
+                        ["<C-h>"] = "select_vertical", -- Open in vertical split
+                        ["<C-t>"] = "select_tab", -- Open in new tab
+                        ["<C-k>"] = "move_selection_previous", -- Move selection up
+                        ["<C-j>"] = "move_selection_next", -- Move selection down
+                        ["<C-u>"] = require('telescope.actions').preview_scrolling_up, -- Scroll up in preview
+                        ["<C-d>"] = require('telescope.actions').preview_scrolling_down, -- Scroll down in preview
                     },
                 },
             },
@@ -107,16 +107,6 @@ return {
                 }
             }
         }
-
-        vim.cmd [[
-          highlight! TelescopePromptPrefix guifg=#fb4934
-          highlight! TelescopeSelection guibg=#3c3836 gui=bold
-          highlight! TelescopeMatching guifg=#fabd2f
-          highlight! TelescopeTitle guifg=#282828 guibg=#b8bb26 gui=bold
-          highlight! TelescopePromptTitle guibg=#fabd2f guifg=#282828 gui=bold
-          highlight! TelescopePreviewTitle guibg=#83a598 guifg=#282828 gui=bold
-          highlight! TelescopeResultsTitle guibg=#d3869b guifg=#282828 gui=bold
-        ]]
 
         -- Keymaps
         vim.api.nvim_set_keymap('n', '<leader>3', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
