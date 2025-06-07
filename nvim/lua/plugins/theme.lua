@@ -8,16 +8,25 @@
 
 -- Gruvbox Material setup
 local function configure_gruvbox()
-    vim.o.termguicolors = true
-    vim.g.gruvbox_material_foreground = 'mix'
-    vim.g.gruvbox_material_background = 'hard'
-    vim.g.gruvbox_material_transparent_background = 1
     vim.g.gruvbox_material_better_performance = 1
-    vim.g.gruvbox_material_diagnostic_text_highlight = 1
-    vim.g.gruvbox_material_enable_italic = 1
+    vim.g.gruvbox_material_foreground = "material"
+    vim.g.gruvbox_material_background = "soft"
     vim.g.gruvbox_material_ui_contrast = "high"
-    vim.g.gruvbox_material_sign_column_background = 'none'
-    vim.cmd.colorscheme("gruvbox-material")
+    vim.g.gruvbox_material_float_style = "dim"
+    vim.g.gruvbox_material_enable_italic = 0
+    vim.g.gruvbox_material_disable_italic_comment = 1
+    vim.g.gruvbox_material_disable_terminal_colors = 1
+
+
+    vim.cmd("colorscheme gruvbox-material") -- ✅ Make sure to apply the colorscheme here
+
+
+    local function set_highlights()
+        vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+        vim.api.nvim_set_hl(0, "Cursor", { bg = "#ffffff" }) -- May not work in Alacritty
+    end
+
+    set_highlights()
 end
 
 -- Monoglow setup
@@ -50,5 +59,5 @@ return {
     "cpea2506/one_monokai.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_one_monokai
+    config = configure_one_monokai,
 }
