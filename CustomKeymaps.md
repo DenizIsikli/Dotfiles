@@ -98,9 +98,13 @@
 ## Telescope
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `select_horizontal`             | `<C-k>`   | Insert/Normal | Open file in horizontal split  |
-| `select_vertical`               | `<C-j>`   | Insert/Normal | Open file in vertical split    |
+| `select_horizontal`             | `<C-l>`   | Insert/Normal | Open file in horizontal split  |
+| `select_vertical`               | `<C-h>`   | Insert/Normal | Open file in vertical split    |
 | `select_tab`                    | `<C-t>`   | Insert/Normal | Open file in new tab
+| `move_selection_previous`       | `<C-k>`   | Insert/Normal | Move up in file selection |
+| `move_selection_next`           | `<C-j>`   | Insert/Normal | Move down in file selection |
+| `require('telescope.actions').preview_scrolling_up`       | `<C-u>`   | Insert/Normal | Scroll up in preview |
+| `require('telescope.actions').preview_scrolling_down`     | `<C-d>`   | Insert/Normal | Scroll down in preview |
 | `<cmd>Telescope find_files<CR>`| `<leader>3`| Normal | Find files |
 | `<cmd>Telescope oldfiles<CR>`| `<leader>1`| Normal | Open recent files |
 
