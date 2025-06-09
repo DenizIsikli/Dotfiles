@@ -1,5 +1,5 @@
 -- General Editor Settings
-vim.wo.number = true
+vim.wo.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.cmdheight = 1
 vim.opt.tabstop = 4
