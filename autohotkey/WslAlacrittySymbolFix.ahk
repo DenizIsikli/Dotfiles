@@ -1,0 +1,5 @@
+﻿^!7::SendText("{")
+^!0::SendText("}")
+^!8::SendText("[")
+^!9::SendText("]")
+^!<::SendText("|")
