@@ -21,6 +21,8 @@ vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', { noremap = true, silent = t
 -- Motion Tweaks
 vim.api.nvim_set_keymap('n', 't', 'g_', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'e', '^', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 't', 'g_', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'e', '^', { noremap = true, silent = true })
 
 -- Auto-Indent
 vim.keymap.set('i', '<C-F>', '<C-O>==', { noremap = true, silent = true })
@@ -63,5 +65,5 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- Insert blank line above and below the current line
-vim.keymap.set("n", "<C-i>", ":put! =''<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-o>", ":put =''<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-h>", "O<Esc>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-l>", "o<Esc>", { noremap = true, silent = true })
