@@ -1,4 +1,5 @@
 -- General Editor Settings
+vim.opt.paste = false
 vim.wo.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.cmdheight = 1
