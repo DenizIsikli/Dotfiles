@@ -41,6 +41,8 @@
 |---------|--------|------|-------------|
 | `g_` | `t` | Normal | Move to the end of the line |
 | `^` | `e` | Normal | Move to the first non-blank character of the line |
+| `g_` | `t` | Visual | Move to the end of the line |
+| `^` | `e` | Visual | Move to the first non-blank character of the line |
 
 ## Line Movement  
 | Command | Keymap | Mode | Description |
@@ -51,8 +53,8 @@
 | `<Esc>:m .-2<CR>==gi` | `<A-k>` | Insert | Move current line **up** and re-enter insert mode |
 | `:m '>+1<CR>gv=gv` | `<A-j>` | Visual | Move selected lines **down** |
 | `:m '<-2<CR>gv=gv` | `<A-k>` | Visual | Move selected lines **up** |
-| `:put! =''<CR>`        | `<C-i>` | Normal | Insert blank line **above** without entering insert mode |
-| `:put =''<CR>`         | `<C-o>` | Normal | Insert blank line **below** without entering insert mode |
+| `O<Esc>`               | `<M-h>` | Normal | Insert blank line **above** without entering insert mode |
+| `o<Esc>`               | `<M-l>` | Normal | Insert blank line **below** without entering insert mode |
 
 ## Comment
 | Command | Keymap | Mode | Description |
