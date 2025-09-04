@@ -1,7 +1,7 @@
 -- Copilot Configuration
 return {
   "zbirenbaum/copilot.lua",
-  event = "InsertEnter",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("copilot").setup({
       suggestion = {
