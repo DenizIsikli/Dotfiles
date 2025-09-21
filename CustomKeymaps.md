@@ -23,10 +23,10 @@
 
 | Command                    | Keymap   | Mode   | Description                         |
 |----------------------------|----------|--------|-------------------------------------|
-| `:resize +5`               | `<C-k>`  | Normal | Increase window **height** by 5 lines (resize upward) |
-| `:resize -5`               | `<C-j>`  | Normal | Decrease window **height** by 5 lines (resize downward) |
-| `:vertical resize +5`      | `<C-l>`  | Normal | Increase window **width** by 5 columns (resize right) |
-| `:vertical resize -5`      | `<C-h>`  | Normal | Decrease window **width** by 5 columns (resize left)  |
+| `:resize +5`               | `<C-j>`  | Normal | Increase window **height** by 5 lines (resize upward) |
+| `:resize -5`               | `<C-k>`  | Normal | Decrease window **height** by 5 lines (resize downward) |
+| `:vertical resize +5`      | `<C-h>`  | Normal | Increase window **width** by 5 columns (resize right) |
+| `:vertical resize -5`      | `<C-l>`  | Normal | Decrease window **width** by 5 columns (resize left)  |
 
 ## Neovim Window Navigation
 | Command | Keymap | Mode | Description |

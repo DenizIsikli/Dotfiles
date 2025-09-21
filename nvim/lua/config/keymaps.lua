@@ -7,10 +7,10 @@ vim.api.nvim_set_keymap('v', '<leader>q', '"+d', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent = true })
 
 -- Window Resize
-vim.keymap.set('n', '<C-k>', function() vim.cmd('resize +5') end, { noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', function() vim.cmd('resize -5') end, { noremap = true, silent = true })
-vim.keymap.set('n', '<C-l>', function() vim.cmd('vertical resize +5') end, { noremap = true, silent = true })
-vim.keymap.set('n', '<C-h>', function() vim.cmd('vertical resize -5') end, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', function() vim.cmd('resize +5') end, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', function() vim.cmd('resize -5') end, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-h>', function() vim.cmd('vertical resize +5') end, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-l>', function() vim.cmd('vertical resize -5') end, { noremap = true, silent = true })
 
 -- Window Navigation
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', { noremap = true, silent = true })
