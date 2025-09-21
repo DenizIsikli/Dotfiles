@@ -53,8 +53,10 @@
 | `<Esc>:m .-2<CR>==gi` | `<A-k>` | Insert | Move current line **up** and re-enter insert mode |
 | `:m '>+1<CR>gv=gv` | `<A-j>` | Visual | Move selected lines **down** |
 | `:m '<-2<CR>gv=gv` | `<A-k>` | Visual | Move selected lines **up** |
-| `O<Esc>`               | `<M-h>` | Normal | Insert blank line **above** without entering insert mode |
-| `o<Esc>`               | `<M-l>` | Normal | Insert blank line **below** without entering insert mode |
+| `O<Esc>` | `<M-h>` | Normal | Insert blank line **above** in normal mode |
+| `o<Esc>` | `<M-l>` | Normal | Insert blank line **below** in normal mode |
+| `<Esc>O` | `<M-h>` | Insert | Insert blank line **above** in insert mode |
+| `<Esc>o` | `<M-l>` | Insert | Insert blank line **below** in insert mode |
 
 ## Comment
 | Command | Keymap | Mode | Description |
