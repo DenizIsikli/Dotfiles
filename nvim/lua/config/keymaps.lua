@@ -52,18 +52,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- Normal mode: Move line up/down with Alt + Up/Down
+-- Move line up/down with Alt + Up/Down (Normal, Insert, Visual modes)
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
-
--- Insert mode: Move line up/down with Alt + Up/Down
 vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
-
--- Visual mode: Move selected lines up/down with Alt + Up/Down
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
--- Insert blank line above and below the current line
+-- Insert blank line above and below the current line (Normal, Insert modes)
 vim.keymap.set("n", "<M-h>", "O<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-l>", "o<Esc>", { noremap = true, silent = true })
+vim.keymap.set("i", "<M-h>", "<Esc>O", { noremap = true, silent = true })
+vim.keymap.set("i", "<M-l>", "<Esc>o", { noremap = true, silent = true })
