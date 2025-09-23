@@ -2,13 +2,42 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
     "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/nvim-cmp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+
     config = function()
+      -- Mason setup
+      require("mason").setup()
+
+      -- LSP and completion capabilities
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- Keymaps on LSP attach
+      local on_attach = function(_, bufnr)
+        local map = function(mode, lhs, rhs)
+          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
+        end
+
+        map("n", "gd", vim.lsp.buf.definition)
+        map("n", "gi", vim.lsp.buf.implementation)
+        map("n", "gr", vim.lsp.buf.references)
+        map("n", "K", vim.lsp.buf.hover)
+        map("n", "<leader>rn", vim.lsp.buf.rename)
+
+        -- Splits
+        map("n", "gdj", function() vim.cmd("vsplit") vim.lsp.buf.definition() end)
+        map("n", "gdk", function() vim.cmd("split") vim.lsp.buf.definition() end)
+        map("n", "gij", function() vim.cmd("vsplit") vim.lsp.buf.implementation() end)
+        map("n", "gik", function() vim.cmd("split") vim.lsp.buf.implementation() end)
+      end
+
+      -- Mason-LSPConfig setup
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
@@ -22,82 +51,18 @@ return {
           "rust_analyzer",
           "zls",
         },
-        automatic_installation = true,
+        handlers = {
+          function(server)
+            local lspconfig_util = vim.lsp.config or require("lspconfig")
+            lspconfig_util[server].setup({
+              on_attach = on_attach,
+              capabilities = capabilities,
+            })
+          end,
+        },
       })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
 
-      -- Optional: Keybindings on LSP attach
-      local on_attach = function(_, bufnr)
-        local map = function(mode, lhs, rhs)
-          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
-        end
-        map("n", "gd", vim.lsp.buf.definition) -- Go to definition
-        map("n", "gi", vim.lsp.buf.implementation) -- Go to implementation
-        map("n", "gr", vim.lsp.buf.references) -- Go to references
-        map("n", "K", vim.lsp.buf.hover) -- Show hover information
-        map("n", "<leader>rn", vim.lsp.buf.rename) -- Rename symbol
-
-        -- Open Definition (Split Window Vertically)
-        map("n", "gdj", function()
-            vim.cmd("vsplit")
-            vim.lsp.buf.definition()
-        end)
-
-        -- Open Definition (Split Window Horizontally)
-        map("n", "gdk", function()
-            vim.cmd("split")
-            vim.lsp.buf.definition()
-        end)
-
-        -- Open Implementation (Split Window Vertically)
-        map("n", "gij", function()
-            vim.cmd("vsplit")
-            vim.lsp.buf.implementation()
-        end)
-
-        -- Open Implementation (Split Window Horizontally)
-        map("n", "gik", function()
-            vim.cmd("split")
-            vim.lsp.buf.implementation()
-        end)
-      end
-
-      -- Language servers
-      local servers = {
-        lua_ls = {},
-        ts_ls = {},
-        html = {},
-        cssls = {},
-        jsonls = {},
-        pyright = {},
-        clangd = {},
-        tailwindcss = {},
-        rust_analyzer = {},
-        zls = {},
-      }
-
-      for name, config in pairs(servers) do
-        config.on_attach = on_attach
-        config.capabilities = require("cmp_nvim_lsp").default_capabilities()
-        lspconfig[name].setup(config)
-      end
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-    },
-    config = function()
+      -- Completion setup
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
