@@ -5,7 +5,7 @@
 SOURCE_FILE="/home/deniz/.tmux.conf"
 
 # Destination path in your Dotfiles repo
-DEST_PATH="/home/deniz/Code/Dotfiles/tmux"
+DEST_PATH="/home/deniz/Code/Dotfiles/tmux/tmux.conf"
 
 # Ensure the destination folder exists
 mkdir -p "$DEST_PATH"

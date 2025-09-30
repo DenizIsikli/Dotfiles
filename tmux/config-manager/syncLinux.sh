@@ -2,7 +2,7 @@
 # To run the script: chmod +x syncLinux.sh && ./syncLinux.sh
 
 # Source path (repo)
-SOURCE_FILE="/home/deniz/Code/Dotfiles/tmux/.tmux.conf"
+SOURCE_FILE="/home/deniz/Code/Dotfiles/tmux/tmux.conf"
 
 # Destination path (actual tmux config in home)
 DEST_FILE="/home/deniz/.tmux.conf"
