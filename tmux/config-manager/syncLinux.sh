@@ -7,7 +7,7 @@ SOURCE_FILE="/home/deniz/Code/Dotfiles/tmux/tmux.conf"
 # Destination path (actual tmux config in home)
 DEST_FILE="/home/deniz/.tmux.conf"
 
-# Ensure the destination folder exists (not really needed for a single file, but safe)
+# Ensure the destination folder exists (home should already exist)
 mkdir -p "$(dirname "$DEST_FILE")"
 
 # Copy the tmux.conf file from repo to home
