@@ -24,4 +24,3 @@ Copy-Item -Path $LUA_FOLDER -Destination $DEST_PATH -Recurse -Force
 Copy-Item -Path $PACK_FOLDER -Destination $DEST_PATH -Recurse -Force
 
 Write-Output "Synchronization completed"
-

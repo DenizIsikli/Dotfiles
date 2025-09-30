@@ -23,4 +23,3 @@ cp -r "$LUA_FOLDER" "$DEST_PATH"
 cp -r "$PACK_FOLDER" "$DEST_PATH"
 
 echo "Synchronization completed"
-
