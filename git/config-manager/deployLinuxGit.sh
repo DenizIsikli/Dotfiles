@@ -3,7 +3,7 @@
 
 # Source path for aliases
 SOURCE_PATH="/home/deniz/Code/Dotfiles/git"
-ALIASES_FILE="$SOURCE_PATH/git_aliases.sh"
+ALIASES_FILE="$SOURCE_PATH/config-manager/deployLinuxGit.sh"
 
 # Destination path
 DEST_PATH="$HOME/.config/git"
