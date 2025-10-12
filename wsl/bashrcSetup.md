@@ -1,51 +1,116 @@
-# ✅ WSL: Setup Home Directory, Codeforces Script Access, and SSH Agent
+# ✅ WSL: Automated Setup Script for Development Environment
 
-To configure your WSL (Debian 12) environment for smoother development, follow these steps. Add the following blocks to the **bottom of your `~/.bashrc`** file, in this **specific order**, to ensure correct initialization.
+This repository contains a script to automatically configure your WSL (Debian) environment for development, including:
+
+* Bash customization
+* Codeforces script access
+* SSH agent setup with your personal key
+* Recommended developer packages
+* Tmux configuration deployment
 
 ---
 
-## 📁 1. Change to Home Directory on Shell Start
+## 📄 1. Bash Customization File
 
-Ensures that every new terminal session starts in your home directory:
+The script creates a separate bash customization file at:
 
 ```bash
+~/.bash_custom
+```
+
+This file contains:
+
+```bash
+############### BashRc Customizations ###############
 # Change home directory on shell start
 cd ~
-```
 
----
-
-## 🛠️ 2. Set Up Codeforces Script Access
-
-Adds your Codeforces script folder to the `PATH` so you can call your compile script from anywhere, and defines a shortcut alias `runcf`:
-
-```bash
 # Set up environment variables for Codeforces script
-export PATH="$PATH:/home/deniz/Code/Codeforces/script"
-alias runcf='/home/deniz/Code/Codeforces/script/compile_n_run.sh'
-```
+export PATH="$PATH:$HOME/Code/Codeforces/script"
+alias runcf='$HOME/Code/Codeforces/script/compile_n_run.sh'
 
----
-
-## 🔐 3. Start SSH Agent If Not Running
-
-Automatically starts the SSH agent if it's not already running:
-
-```bash
 # Start SSH agent and add key if not already added
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval "$(ssh-agent -s)" > /dev/null
+fi
+
+# Setup SSH key on WSL startup
+SSH_KEY="$HOME/.ssh/id_personal"
+
+if [ -f "$SSH_KEY" ]; then
+  if ! ssh-add -l | grep -q "$(ssh-keygen -lf "$SSH_KEY" | awk '{print $2}')"; then
+    ssh-add "$SSH_KEY" > /dev/null
+  fi
+fi
+
+# Source git deployment script if present
+if [ -f "$HOME/.config/git/deployLinuxGit.sh" ]; then
+  source "$HOME/.config/git/deployLinuxGit.sh"
 fi
 ```
 
 ---
 
-## 🔑 4. Add SSH Key Automatically
+## 🔗 2. `.bashrc` Linking
 
-Replaces `"id_personal"` with your actual key file if different. This block checks if the key is already added and adds it if necessary:
+The script ensures your `~/.bashrc` sources the `.bash_custom` file automatically:
 
 ```bash
-# Setup SSH key on WSL startup
+# Source user bash customizations
+if [ -f ~/.bash_custom ]; then
+  source ~/.bash_custom
+fi
+```
+
+No need to manually edit `.bashrc` — this is handled by the deploy script.
+
+---
+
+## 🛠️ 3. Recommended Developer Packages
+
+The script installs essential packages for development and system utilities. These are included:
+
+| Category           | Package                                                              |
+| ------------------ | -------------------------------------------------------------------- |
+| Build tools        | `build-essential`, `clangd`                                          |
+| Version control    | `git`                                                                |
+| Network utilities  | `curl`, `wget`, `fd-find`, `keychain`, `openssh-client`, `net-tools` |
+| Terminal utilities | `tmux`, `neovim`                                                     |
+| Scripting          | `python3`, `python3-pip`                                             |
+| Automation         | `cron`                                                               |
+| System tools       | `htop`, `tree`, `unzip`, `zip`                                       |
+
+Install command used in the script:
+
+```bash
+sudo apt update -y && sudo apt install -y \
+  build-essential \
+  clangd \
+  git \
+  curl \
+  wget \
+  fd-find \
+  keychain \
+  openssh-client \
+  net-tools \
+  tmux \
+  neovim \
+  python3 \
+  python3-pip \
+  cron \
+  htop \
+  tree \
+  unzip \
+  zip
+```
+
+---
+
+## 🔑 4. SSH Key Setup
+
+The script automatically starts your SSH agent and adds your personal key if it exists and isn’t already loaded:
+
+```bash
 SSH_KEY="$HOME/.ssh/id_personal"
 
 if [ -f "$SSH_KEY" ]; then
@@ -57,10 +122,39 @@ fi
 
 ---
 
-## 🔁 Apply Changes
+## 📦 5. Tmux Configuration Deployment
 
-After updating `.bashrc`, run this to apply changes immediately:
+If you have a tmux configuration file at `~/.tmux.conf`, the script copies it to your dotfiles folder:
+
+```bash
+DEST_DIR="$HOME/Code/Dotfiles/tmux"
+mkdir -p "$DEST_DIR"
+cp ~/.tmux.conf "$DEST_DIR/tmux.conf"
+```
+
+This ensures your tmux setup is version-controlled and portable.
+
+---
+
+## ▶️ 6. Usage
+
+Run the deploy script in WSL to automatically apply all settings:
+
+```bash
+chmod +x ~/Code/Dotfiles/wsl/deployLinux.sh
+~/Code/Dotfiles/wsl/deployLinux.sh
+```
+
+After running, open a new terminal or reload your shell:
 
 ```bash
 source ~/.bashrc
 ```
+
+Your environment will now have:
+
+* Bash customizations loaded
+* Codeforces scripts accessible globally
+* SSH agent started and key added
+* Recommended development packages installed
+* Tmux configuration deployed
