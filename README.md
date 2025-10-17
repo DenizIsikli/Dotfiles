@@ -3,7 +3,7 @@
 Personal dotfiles for Neovim, Alacritty, and Tmux.
 
 <div align="center">
-  <img src="misc/DotfilesRepoReadmePic.jpg" alt="Repository Picture" width="300">
+  <img src="misc/images/DotfilesRepoReadmePic.jpg" alt="Repository Picture" width="300">
 </div>
 
 ## Repository Structure
