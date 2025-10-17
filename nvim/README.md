@@ -1,2 +1,2 @@
 # Nvim Configuration
-<img src="../images/nvim.png" width="1000" align="center" />
+<img src="../misc/images/nvim.png" width="1000" align="center" />
