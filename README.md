@@ -10,12 +10,12 @@ Personal dotfiles for Neovim, Alacritty, and Tmux.
 
 #### Configurations
 
-- `alacritty/`
-- `autohotkey/`
-- `git/`
-- `nvim/`
-- `tmux/`
-- `wsl/`
+- `alacritty/`: Configurations for alacritty across Linux, Windows, Wsl
+- `autohotkey/`: Autohotkey for symbols in Alacritty and Wsl
+- `git/`: Git configurations
+- `nvim/`: Nvim configurations
+- `tmux/`: Tmux configurations
+- `wsl/`: Bash script for fresh Wsl setup
 
 #### Additional Documentation
 
