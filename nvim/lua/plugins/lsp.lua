@@ -1,24 +1,20 @@
 -- Mason, LSP and Completion Configuration
 return {
+  -- Mason core
   {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/nvim-cmp",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-
     config = function()
-      -- Mason setup
       require("mason").setup()
+    end,
+  },
 
-      -- LSP and completion capabilities
+  -- Mason LSP integration
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
+    config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Keymaps on LSP attach
       local on_attach = function(_, bufnr)
         local map = function(mode, lhs, rhs)
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
@@ -30,14 +26,13 @@ return {
         map("n", "K", vim.lsp.buf.hover)
         map("n", "<leader>rn", vim.lsp.buf.rename)
 
-        -- Splits
+        -- Open definitions/implementations in splits
         map("n", "gdj", function() vim.cmd("vsplit") vim.lsp.buf.definition() end)
         map("n", "gdk", function() vim.cmd("split") vim.lsp.buf.definition() end)
         map("n", "gij", function() vim.cmd("vsplit") vim.lsp.buf.implementation() end)
         map("n", "gik", function() vim.cmd("split") vim.lsp.buf.implementation() end)
       end
 
-      -- Mason-LSPConfig setup
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
@@ -53,16 +48,28 @@ return {
         },
         handlers = {
           function(server)
-            local lspconfig_util = vim.lsp.config or require("lspconfig")
-            lspconfig_util[server].setup({
+            local lspconfig = require("lspconfig")
+            lspconfig[server].setup({
               on_attach = on_attach,
               capabilities = capabilities,
             })
           end,
         },
       })
+    end,
+  },
 
-      -- Completion setup
+  -- nvim-cmp and completion sources
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
@@ -75,7 +82,15 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<C-Space>"] = cmp.mapping.complete(),
