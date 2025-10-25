@@ -20,7 +20,6 @@
 
 ## Window Resizing  
 #### Resize the currently active split window (code or terminal). Works seamlessly with multiple splits.  
-
 | Command                    | Keymap   | Mode   | Description                         |
 |----------------------------|----------|--------|-------------------------------------|
 | `:resize +5`               | `<C-j>`  | Normal | Increase window **height** by 5 lines (resize upward) |
@@ -77,15 +76,15 @@
 ## LSP
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `vim.lsp.buf.definition()`        | `gd`    | Normal | Go to definition |
-| `vim.lsp.buf.implementation()`    | `gi`    | Normal | Go to implementation |
-| `vim.lsp.buf.references()`        | `gr`    | Normal | Go to references |
-| `vim.lsp.buf.hover()`             | `K`     | Normal | Show hover information |
+| `vim.lsp.buf.definition()`        | `<leader>gd`    | Normal | Go to definition |
+| `vim.lsp.buf.implementation()`    | `<leader>gi`    | Normal | Go to implementation |
+| `vim.lsp.buf.references()`        | `<leader>gr`    | Normal | Go to references |
+| `vim.lsp.buf.hover()`             | `<leader>K`     | Normal | Show hover information |
 | `vim.lsp.buf.rename()`            | `<leader>rn` | Normal | Rename symbol |
-| `vsplit + vim.lsp.buf.definition()` | `gdj`   | Normal | Open definition in vertical split |
-| `split + vim.lsp.buf.definition()`  | `gdk`   | Normal | Open definition in horizontal split |
-| `vsplit + vim.lsp.buf.implementation()` | `gij` | Normal | Open implementation in vertical split |
-| `split + vim.lsp.buf.implementation()`  | `gik` | Normal | Open implementation in horizontal split |
+| `vsplit + vim.lsp.buf.definition()` | `gdh`   | Normal | Open definition in vertical split |
+| `split + vim.lsp.buf.definition()`  | `gdl`   | Normal | Open definition in horizontal split |
+| `vsplit + vim.lsp.buf.implementation()` | `gih` | Normal | Open implementation in vertical split |
+| `split + vim.lsp.buf.implementation()`  | `gil` | Normal | Open implementation in horizontal split |
 
 ## Oil
 | Command | Keymap | Mode | Description |
@@ -111,11 +110,6 @@
 | `require('telescope.actions').preview_scrolling_down`     | `<C-d>`   | Insert/Normal | Scroll down in preview |
 | `<cmd>Telescope find_files<CR>`| `<leader>3`| Normal | Find files |
 | `<cmd>Telescope oldfiles<CR>`| `<leader>1`| Normal | Open recent files |
-
-## Transparent Background
-| Command | Keymap | Mode | Description |
-|---------|--------|------|-------------|
-| `<cmd>TransparentToggle<CR>`| `<leader>0`| Normal | Toggle transparent background |
 
 ## Trouble
 | Command | Keymap | Mode | Description |

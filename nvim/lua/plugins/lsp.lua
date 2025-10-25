@@ -20,17 +20,17 @@ return {
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
         end
 
-        map("n", "gd", vim.lsp.buf.definition)
-        map("n", "gi", vim.lsp.buf.implementation)
-        map("n", "gr", vim.lsp.buf.references)
-        map("n", "K", vim.lsp.buf.hover)
-        map("n", "<leader>rn", vim.lsp.buf.rename)
+        map('n', '<leader>gd', vim.lsp.buf.definition)
+        map('n', '<leader>gi', vim.lsp.buf.implementation)
+        map('n', '<leader>gr', vim.lsp.buf.references)
+        map('n', '<leader>K', vim.lsp.buf.hover)
+        map('n', '<leader>rn', vim.lsp.buf.rename)
 
         -- Open definitions/implementations in splits
-        map("n", "gdj", function() vim.cmd("vsplit") vim.lsp.buf.definition() end)
-        map("n", "gdk", function() vim.cmd("split") vim.lsp.buf.definition() end)
-        map("n", "gij", function() vim.cmd("vsplit") vim.lsp.buf.implementation() end)
-        map("n", "gik", function() vim.cmd("split") vim.lsp.buf.implementation() end)
+        map('n', 'gdh', function() vim.cmd("vsplit") vim.lsp.buf.definition() end)
+        map('n', 'gdl', function() vim.cmd("split") vim.lsp.buf.definition() end)
+        map('n', 'gih', function() vim.cmd("vsplit") vim.lsp.buf.implementation() end)
+        map('n', 'gil', function() vim.cmd("split") vim.lsp.buf.implementation() end)
       end
 
       require("mason-lspconfig").setup({
