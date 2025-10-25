@@ -52,6 +52,8 @@ if [ -f "$HOME/.config/git/deployLinuxGit.sh" ]; then
 fi
 ```
 
+Note: The .bashrc snippet provided above is identical to the version stored in bashrc/
+
 ---
 
 ## 🔗 2. `.bashrc` Linking
