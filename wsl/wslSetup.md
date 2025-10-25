@@ -25,9 +25,12 @@ This file contains:
 # Change home directory on shell start
 cd ~
 
+# Prevent accidental shell exit with Ctrl+D
+set -o ignoreeof
+
 # Set up environment variables for Codeforces script
-export PATH="$PATH:$HOME/Code/Codeforces/script"
-alias runcf='$HOME/Code/Codeforces/script/compile_n_run.sh'
+export PATH="$PATH:/home/deniz/Code/Codeforces/script"
+alias runcf='/home/deniz/Code/Codeforces/script/compile_n_run.sh'
 
 # Start SSH agent and add key if not already added
 if [ -z "$SSH_AUTH_SOCK" ]; then
