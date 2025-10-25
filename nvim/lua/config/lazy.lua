@@ -28,7 +28,6 @@ require('lazy').setup({
     require('plugins.oil'),
     require('plugins.telescope'),
     require('plugins.theme'),
-    require('plugins.transparent'),
     require('plugins.trouble'),
     require('plugins.ufo'),
 })
