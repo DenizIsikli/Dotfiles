@@ -96,7 +96,7 @@ return {
                                     return
                                 end
                             end
-
+                            
                             vim.cmd('edit ' .. vim.fn.fnameescape(filepath))
                         end
 
