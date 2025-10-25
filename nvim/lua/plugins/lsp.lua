@@ -14,24 +14,20 @@ return {
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      local on_attach = function(_, bufnr)
-        local map = function(mode, lhs, rhs)
-          vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
-        end
-
-            map('n', 'gd', vim.lsp.buf.definition)
-            map('n', 'gi', vim.lsp.buf.implementation)
-            map('n', 'gr', vim.lsp.buf.references)
-            map('n', 'K', vim.lsp.buf.hover)
-            map('n', 'rn', vim.lsp.buf.rename)
-
-            -- Splits
-            map('n', 'gdh', function() vim.cmd('vsplit') vim.lsp.buf.definition() end)
-            map('n', 'gdl', function() vim.cmd('split') vim.lsp.buf.definition() end)
-            map('n', 'gih', function() vim.cmd('vsplit') vim.lsp.buf.implementation() end)
-            map('n', 'gil', function() vim.cmd('split') vim.lsp.buf.implementation() end)
-      end
+          local on_attach = function(_, bufnr)
+                local map = function(mode, lhs, rhs)
+                    vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, noremap = true, silent = true })
+                end
+                map('n', 'gd', vim.lsp.buf.definition)
+                map('n', 'gi', vim.lsp.buf.implementation)
+                map('n', 'gr', vim.lsp.buf.references)
+                map('n', 'K', vim.lsp.buf.hover)
+                map('n', '<leader>rn', vim.lsp.buf.rename)
+                map('n', 'gdh', function() vim.cmd('vsplit') vim.lsp.buf.definition() end)
+                map('n', 'gdl', function() vim.cmd('split') vim.lsp.buf.definition() end)
+                map('n', 'gih', function() vim.cmd('vsplit') vim.lsp.buf.implementation() end)
+                map('n', 'gil', function() vim.cmd('split') vim.lsp.buf.implementation() end)
+          end
 
       require("mason-lspconfig").setup({
         ensure_installed = {
