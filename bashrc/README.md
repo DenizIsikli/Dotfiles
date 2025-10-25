@@ -1,4 +1,4 @@
-# 🧩 BashRC Customizations
+# BashRC Customizations
 
 Use this snippet to customize your `.bashrc` for safer session handling, SSH setup, and Codeforces script integration.
 
