@@ -76,11 +76,11 @@
 ## LSP
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
-| `vim.lsp.buf.definition()`        | `gd`    | Normal | Go to definition |
-| `vim.lsp.buf.implementation()`    | `gi`    | Normal | Go to implementation |
-| `vim.lsp.buf.references()`        | `gr`    | Normal | Go to references |
-| `vim.lsp.buf.hover()`             | `K`     | Normal | Show hover information |
-| `vim.lsp.buf.rename()`            | `rn` | Normal | Rename symbol |
+| `vim.lsp.buf.definition()`        | `<leader>gd`    | Normal | Go to definition |
+| `vim.lsp.buf.implementation()`    | `<leader>gi`    | Normal | Go to implementation |
+| `vim.lsp.buf.references()`        | `<leader>gr`    | Normal | Go to references |
+| `vim.lsp.buf.hover()`             | `<leader>K`     | Normal | Show hover information |
+| `vim.lsp.buf.rename()`            | `<leader>rn` | Normal | Rename symbol |
 | `vsplit + vim.lsp.buf.definition()` | `gdh`   | Normal | Open definition in vertical split |
 | `split + vim.lsp.buf.definition()`  | `gdl`   | Normal | Open definition in horizontal split |
 | `vsplit + vim.lsp.buf.implementation()` | `gih` | Normal | Open implementation in vertical split |
