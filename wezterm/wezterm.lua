@@ -5,6 +5,21 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+wezterm.on("gui-startup", function(cmd)
+  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  local gui_window = window:gui_window()
+
+  local screen = wezterm.gui.screens().active
+
+  local width = 180 * 8
+  local height = 50 * 18
+
+  local x = screen.x + (screen.width - width) / 2
+  local y = screen.y + (screen.height - height) / 2
+
+  gui_window:set_position(x, y)
+end)
+
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
