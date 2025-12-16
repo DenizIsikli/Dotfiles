@@ -28,5 +28,8 @@ return {
         end,
       },
     })
+    vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#282828" })
+    vim.api.nvim_set_hl(0, "TabLineFill",   { bg = "#282828" })
+    vim.api.nvim_set_hl(0, "TabLine",       { bg = "#282828" })
   end,
 }
