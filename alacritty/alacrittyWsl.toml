@@ -1,9 +1,9 @@
-# AlaraMono Nerd Font", style = "Regular" }critty Configuration File
+# Alacritty Configuration File
 [window]
 dimensions = { columns = 180, lines = 50 }
 startup_mode = "Windowed"
 position = { x = 0, y = 0 }
-padding = { x = 0, y = 0 }
+padding = { x = 5, y = 0 }
 decorations = "full"
 title = "Alacritty"
 opacity = 1
@@ -16,13 +16,14 @@ multiplier = 3
 normal = { family = "FiraMono Nerd Font", style = "Regular" }
 bold = { family = "FiraMono Nerd Font", style = "Bold" }
 italic = { family = "FiraMono Nerd Font", style = "Italic" }
+
 size = 10.5
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 
 [colors]
 [colors.primary]
-background = "0x101010"
+background = "0x282828"
 foreground = "0xebdbb2"
 
 [colors.normal]
