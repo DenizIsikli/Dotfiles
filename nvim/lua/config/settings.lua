@@ -1,6 +1,7 @@
 -- General Editor Settings
 vim.opt.paste = false
 vim.wo.relativenumber = true
+vim.o.termguicolors = true
 vim.opt.swapfile = false
 vim.opt.cmdheight = 1
 vim.opt.tabstop = 4
@@ -17,9 +18,9 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.g.have_nerd_font = true
 
-vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "#FF0000" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#8b8b8b" })
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3b3b3b" })
+vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "#424242" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#665c54" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFFFFF", bold = true })
 
 -- Diagnostics

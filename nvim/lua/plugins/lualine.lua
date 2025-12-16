@@ -29,10 +29,10 @@ return {
         end
 
         -- Set theme
-        -- local theme = gruvbox_material_theme() -- Gruvbox Dark Theme
+        local theme = gruvbox_material_theme() -- Gruvbox Dark Theme
         -- local theme = monoglow_theme() -- Monoglow Theme
         -- local theme = everforest_theme() -- Everforest Theme
-        local theme = one_monokai_theme() -- One Monokai Theme
+        -- local theme = one_monokai_theme() -- One Monokai Theme
 
          local function lualine_setup()
             lualine.setup({
