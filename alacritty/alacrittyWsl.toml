@@ -1,4 +1,4 @@
-# Alacritty Configuration File
+# AlaraMono Nerd Font", style = "Regular" }critty Configuration File
 [window]
 dimensions = { columns = 180, lines = 50 }
 startup_mode = "Windowed"
@@ -6,7 +6,7 @@ position = { x = 0, y = 0 }
 padding = { x = 0, y = 0 }
 decorations = "full"
 title = "Alacritty"
-opacity = 0.90
+opacity = 1
 
 [scrolling]
 history = 10000
