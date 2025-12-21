@@ -20,7 +20,7 @@ Personal dotfiles for Neovim, Alacritty, and Tmux.
 
 #### Additional Documentation
 
+- `wsl/wslSetup.md`: Automated Setup Script for Development Environment
 - `CommandPromptConfiguration.md`: Personal command prompt configuration settings (Windows).
-- `InstallationGuide.md`: A guide on setting up Neovim with this configuration.
 - `NeovimCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Neovim.
 - `TmuxCheatsheet.md`: A curated list of shortcuts and commands for efficient navigation and command execution within Tmux.
