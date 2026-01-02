@@ -10,6 +10,7 @@
 | `<gv`   | `<` | Visual | Outdent and keep selection |
 | `<C-O>==` | `<C-F>` | Insert | Aligns the current line |
 | `==` | `<C-F>` | Normal | Aligns the current line |
+| `=gv`    | `<C-F>` | Visual | Aligns the selected lines (keeps selection) |
 
 ## xclip
 | Command | Keymap | Mode | Description |

@@ -27,6 +27,7 @@ vim.api.nvim_set_keymap('v', 'e', '^', { noremap = true, silent = true })
 -- Auto-Indent
 vim.keymap.set('i', '<C-F>', '<C-O>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-F>', '==', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-F>', '=gv', { noremap = true, silent = true })
 
 -- Move Lines Visually
 vim.keymap.set('v', '>', '>gv')
