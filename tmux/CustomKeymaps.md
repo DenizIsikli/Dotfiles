@@ -4,8 +4,8 @@
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `source-file ~/.tmux.conf` | `<prefix> + r` | Any | Reload tmux configuration |
-| `previous-window` | `C-p` | Any | Switch to previous window |
-| `next-window` | `C-o` | Any | Switch to next window |
+| `previous-window` | `C-o` | Any | Switch to previous window |
+| `next-window` | `C-i` | Any | Switch to next window |
 | `select-pane -L` | `<prefix> + h` | Any | Move to left pane |
 | `select-pane -D` | `<prefix> + j` | Any | Move to bottom pane |
 | `select-pane -U` | `<prefix> + k` | Any | Move to top pane |
