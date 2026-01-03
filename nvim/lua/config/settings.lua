@@ -1,5 +1,6 @@
 -- General Editor Settings
 vim.opt.paste = false
+vim.opt.number = true
 vim.wo.relativenumber = true
 vim.o.termguicolors = true
 vim.opt.swapfile = false
