@@ -30,6 +30,7 @@ require('lazy').setup({
     require('plugins.statuscol'),
     require('plugins.telescope'),
     require('plugins.theme'),
+    require('plugins.tiny-inline-diagnostic'),
     require('plugins.trouble'),
     require('plugins.ufo'),
 })
