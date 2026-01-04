@@ -26,11 +26,8 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFFFFF", bold = true })
 
 -- Diagnostics
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●',
-    spacing = 4,
-  },
   severity_sort = true,
   underline = true,
   update_in_insert = true,
+
 })
