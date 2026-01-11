@@ -16,6 +16,7 @@ Personal dotfiles for Neovim, Alacritty, and Tmux.
 - `git/`: Git configurations
 - `nvim/`: Nvim configurations
 - `tmux/`: Tmux configurations
+- `wezterm/`: Wezterm configurations
 - `wsl/`: Bash script for fresh Wsl setup
 
 #### Additional Documentation
