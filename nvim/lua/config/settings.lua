@@ -19,7 +19,7 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.g.have_nerd_font = true
 
-vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "#424242" })
+vim.api.nvim_set_hl(0, "Cursor", { fg = "#282828", bg = "#fb4934" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#928374" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFFFFF", bold = true })
@@ -29,5 +29,4 @@ vim.diagnostic.config({
   severity_sort = true,
   underline = true,
   update_in_insert = true,
-
 })
