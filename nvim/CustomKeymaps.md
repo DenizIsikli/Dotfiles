@@ -12,12 +12,13 @@
 | `==` | `<C-F>` | Normal | Aligns the current line |
 | `=gv`    | `<C-F>` | Visual | Aligns the selected lines (keeps selection) |
 
-## xclip
+## Clipboard & Selection
 | Command | Keymap | Mode | Description |
 |---------|--------|------|-------------|
 | `"+y`   | `<leader>y`| Visual | Copy marked |
 | `+d`    | `<leader>q`| Visual | Copy and delete |
 | `:%y+<CR>`| `<leader>Y`| Normal | Copy entire file |
+| `ggVG` | `<leader>V` | Normal | Select entire file |
 
 ## Window Resizing  
 #### Resize the currently active split window (code or terminal). Works seamlessly with multiple splits.  
