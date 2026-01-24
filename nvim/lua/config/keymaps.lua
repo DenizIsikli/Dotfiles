@@ -1,10 +1,11 @@
 -- Leader Key
 vim.g.mapleader = "æ"
 
--- Visual Mode Yank/Delete (Clipboard)
+-- Clipboard & Selection
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>q', '"+d', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>Y', ':%y+<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>V', 'ggVG', { noremap = true, silent = true })
 
 -- Window Resize
 vim.keymap.set('n', '<C-j>', function() vim.cmd('resize +5') end, { noremap = true, silent = true })
