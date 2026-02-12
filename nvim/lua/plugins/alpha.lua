@@ -47,7 +47,7 @@ return {
             "                               N E O V I M                              ",
         }
 
-        dashboard.section.header.val = vim.list_slice(dashboard.section.header.val, 7, 60)
+        -- dashboard.section.header.val = vim.list_slice(dashboard.section.header.val, 7, 300)
 
         -- Set menu
         dashboard.section.buttons.val = {
