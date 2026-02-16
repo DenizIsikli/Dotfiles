@@ -69,7 +69,7 @@ return {
         alpha.setup(dashboard.opts)
 
         -- Alpha Dashboard: Exit to Dashboard
-        vim.keymap.set("n", "<leader>T", function()
+        vim.keymap.set("n", "<leader>fr", function()
           local buffers = vim.fn.getbufinfo({ buflisted = 1 })
           for _, buf in ipairs(buffers) do
             vim.cmd("bd! " .. buf.bufnr)
