@@ -1,93 +1,114 @@
-# ✅ WSL: Automated Setup Script for Development Environment
+# WSL: Automated Setup Script for Development Environment
 
-This repository contains a script to automatically configure your WSL (Debian) environment for development, including:
+This repository contains a script to automatically configure your WSL
+(Debian) environment for development.
 
-* Bash customization
-* Codeforces script access
-* SSH agent setup with your personal key
-* Recommended developer packages
-* Tmux configuration deployment
+## Included Features
 
----
+-   Bash customization
+-   Codeforces script access (optional)
+-   SSH agent setup with automatic key loading
+-   Recommended developer packages
+-   Tmux configuration deployment
 
-## 📄 1. Bash Customization File
+------------------------------------------------------------------------
 
-The script creates a separate bash customization file at:
+## 1. Bash Customization File
 
-```bash
+The script creates:
+
+``` bash
 ~/.bash_custom
 ```
 
-This file contains:
+Contents:
 
-```bash
+``` bash
 ############### BashRc Customizations ###############
+
 # Change home directory on shell start
 cd ~
 
 # Prevent accidental shell exit with Ctrl+D
 set -o ignoreeof
 
-# Set up environment variables for Codeforces script
-export PATH="$PATH:/home/deniz/Code/Codeforces/script"
-alias runcf='/home/deniz/Code/Codeforces/script/compile_n_run.sh'
+# ================= Environment variables =================
 
-# Start SSH agent and add key if not already added
+# -- Codeforces (optional)
+CF_DIR="$HOME/Code/Codeforces/script"
+if [ -d "$CF_DIR" ]; then
+  export PATH="$PATH:$CF_DIR"
+  alias runcf="$CF_DIR/compile_n_run.sh"
+fi
+
+# -- Dotfiles Nvim (optional)
+NVIM_MANAGER="$HOME/Code/Dotfiles/nvim/config-manager"
+if [ -d "$NVIM_MANAGER" ]; then
+  export PATH="$PATH:$NVIM_MANAGER"
+fi
+
+# -- Local bin
+export PATH="$HOME/.local/bin:$PATH"
+
+# ================= SSH Setup =================
+
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval "$(ssh-agent -s)" > /dev/null
 fi
 
-# Setup SSH key on WSL startup
-SSH_KEY="$HOME/.ssh/id_personal"
-
-if [ -f "$SSH_KEY" ]; then
-  if ! ssh-add -l | grep -q "$(ssh-keygen -lf "$SSH_KEY" | awk '{print $2}')"; then
-    ssh-add "$SSH_KEY" > /dev/null
+for KEY in "$HOME/.ssh/id_ed25519" "$HOME/.ssh/id_rsa" "$HOME/.ssh/id_personal"; do
+  if [ -f "$KEY" ]; then
+    ssh-add -l 2>/dev/null | grep -q "$(ssh-keygen -lf "$KEY" | awk '{print $2}')" || \
+      ssh-add "$KEY" > /dev/null 2>&1
   fi
-fi
+done
 
-# Source git deployment script if present
-if [ -f "$HOME/.config/git/deployLinuxGit.sh" ]; then
-  source "$HOME/.config/git/deployLinuxGit.sh"
+# ================= Optional Scripts =================
+
+GIT_SCRIPT="$HOME/.config/git/deployLinuxGit.sh"
+if [ -f "$GIT_SCRIPT" ]; then
+  source "$GIT_SCRIPT"
 fi
 ```
 
-Note: The .bashrc snippet provided above is identical to the version stored in bashrc/
+------------------------------------------------------------------------
 
----
+## 2. .bashrc Linking
 
-## 🔗 2. `.bashrc` Linking
-
-The script ensures your `~/.bashrc` sources the `.bash_custom` file automatically:
-
-```bash
+``` bash
 # Source user bash customizations
 if [ -f ~/.bash_custom ]; then
   source ~/.bash_custom
 fi
 ```
 
-No need to manually edit `.bashrc` — this is handled by the deploy script.
+------------------------------------------------------------------------
 
----
+## 3. Recommended Developer Packages
 
-## 🛠️ 3. Recommended Developer Packages
+  -----------------------------------------------------------------------
+  Category        Packages
+  --------------- -------------------------------------------------------
+  Build tools     build-essential, clangd
 
-The script installs essential packages for development and system utilities. These are included:
+  Version control git
 
-| Category           | Package                                                              |
-| ------------------ | -------------------------------------------------------------------- |
-| Build tools        | `build-essential`, `clangd`                                          |
-| Version control    | `git`                                                                |
-| Network utilities  | `curl`, `wget`, `fd-find`, `keychain`, `openssh-client`, `net-tools` |
-| Terminal utilities | `tmux`, `neovim`                                                     |
-| Scripting          | `python3`, `python3-pip`                                             |
-| Automation         | `cron`                                                               |
-| System tools       | `htop`, `tree`, `unzip`, `zip`                                       |
+  Network         curl, wget, fd-find, keychain, openssh-client,
+  utilities       net-tools
 
-Install command used in the script:
+  Terminal        tmux, neovim
+  utilities       
 
-```bash
+  Scripting       python3, python3-pip
+
+  Automation      cron
+
+  System tools    htop, tree, unzip, zip
+  -----------------------------------------------------------------------
+
+Install command:
+
+``` bash
 sudo apt update -y && sudo apt install -y \
   build-essential \
   clangd \
@@ -109,57 +130,25 @@ sudo apt update -y && sudo apt install -y \
   zip
 ```
 
----
+------------------------------------------------------------------------
 
-## 🔑 4. SSH Key Setup
+## 4. SSH Key Setup
 
-The script automatically starts your SSH agent and adds your personal key if it exists and isn’t already loaded:
+The script automatically attempts to load available SSH keys:
 
-```bash
-SSH_KEY="$HOME/.ssh/id_personal"
+-   \~/.ssh/id_ed25519
+-   \~/.ssh/id_rsa
+-   \~/.ssh/id_personal
 
-if [ -f "$SSH_KEY" ]; then
-  if ! ssh-add -l | grep -q "$(ssh-keygen -lf "$SSH_KEY" | awk '{print $2}')"; then
-    ssh-add "$SSH_KEY" > /dev/null
-  fi
-fi
-```
+------------------------------------------------------------------------
 
----
+## 5. Tmux Configuration Deployment
 
-## 📦 5. Tmux Configuration Deployment
-
-If you have a tmux configuration file at `~/.tmux.conf`, the script copies it to your dotfiles folder:
-
-```bash
+``` bash
 DEST_DIR="$HOME/Code/Dotfiles/tmux"
 mkdir -p "$DEST_DIR"
-cp ~/.tmux.conf "$DEST_DIR/tmux.conf"
+
+if [ -f "$HOME/.tmux.conf" ]; then
+  cp "$HOME/.tmux.conf" "$DEST_DIR/tmux.conf"
+fi
 ```
-
-This ensures your tmux setup is version-controlled and portable.
-
----
-
-## ▶️ 6. Usage
-
-Run the deploy script in WSL to automatically apply all settings:
-
-```bash
-chmod +x ~/Code/Dotfiles/wsl/deployLinux.sh
-~/Code/Dotfiles/wsl/deployLinux.sh
-```
-
-After running, open a new terminal or reload your shell:
-
-```bash
-source ~/.bashrc
-```
-
-Your environment will now have:
-
-* Bash customizations loaded
-* Codeforces scripts accessible globally
-* SSH agent started and key added
-* Recommended development packages installed
-* Tmux configuration deployed
