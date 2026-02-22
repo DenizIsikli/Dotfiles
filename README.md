@@ -13,6 +13,7 @@ Personal dotfiles for Neovim, Alacritty, and Tmux.
 - `alacritty/`: Configurations for alacritty across Linux, Windows, Wsl
 - `autohotkey/`: Autohotkey for symbols in Alacritty and Wsl
 - `bashrc/`: Bashrc configurations
+- `firefox/`: Firefox configurations
 - `git/`: Git configurations
 - `nvim/`: Nvim configurations
 - `tmux/`: Tmux configurations

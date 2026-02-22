@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name": "AMOLED",
+    "theme": {
+        "images": {},
+        "properties": {},
+        "colors": {
+            "toolbar": "rgb(0, 0, 0)",
+            "toolbar_text": "rgb(203, 203, 203)",
+            "frame": "rgb(0, 0, 0)",
+
+            "tab_background_text": "rgb(223, 223, 223)",
+            "tab_text": "rgb(195, 195, 195)",
+
+            "tab_selected": "rgb(40, 40, 40)",
+
+            "toolbar_field": "rgb(0, 0, 0)",
+            "toolbar_field_text": "rgb(226, 226, 226)",
+
+            "tab_line": "rgb(120, 120, 120)",
+
+            "popup": "rgb(0, 0, 0)",
+            "popup_text": "rgb(191, 191, 191)",
+            "ntp_background": "rgb(0, 0, 0)",
+            "tab_loading": "rgb(53, 53, 53)"
+        }
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{38bbd5d5-5030-42c7-823b-05bf8a3ea075}"
+        }
+    }
+}
+
