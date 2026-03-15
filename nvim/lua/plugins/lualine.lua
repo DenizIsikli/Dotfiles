@@ -24,15 +24,10 @@ return {
             return require("lualine.themes.everforest")
         end
 
-        local function one_monokai_theme()
-            return require("lualine.themes.one_monokai")
-        end
-
         -- Choose theme
         local theme = gruvbox_material_theme()
         -- local theme = monoglow_theme()
         -- local theme = everforest_theme()
-        -- local theme = one_monokai_theme()
 
         -- CONDITIONS
         local conditions = {
@@ -91,7 +86,7 @@ return {
         }
 
         ins_left {
-            function() return '' end,
+            function() return '' end,
             padding = { right = 1 },
         }
 
@@ -120,7 +115,7 @@ return {
             function() return '%=' end,
         }
 
-        ins_left {
+        ins_right{
             function()
                 local msg = 'No Active Lsp'
                 local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
