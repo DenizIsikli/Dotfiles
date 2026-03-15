@@ -1,11 +1,11 @@
 -- Theme Configuration
 
--- Theme(s) List: Oxocarbon, Gruvbox Material, Monoglow, Everforest, One Monokai
 -- Oxocarbon: "B4mbus/oxocarbon-lua.nvim"
 -- Gruvbox: "sainnhe/gruvbox-material"
 -- Monoglow: "wnkz/monoglow.nvim"
 -- Everforest: "sainnhe/everforest"
 -- One Monokai: "cpea2506/one_monokai.nvim"
+
 
 -- Oxocarbon setup
 local function configure_oxocarbon()
@@ -55,8 +55,8 @@ local function configure_one_monokai()
 end
 
 return {
-    "B4mbus/oxocarbon-lua.nvim",
+    "cpea2506/one_monokai.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_oxocarbon,
+    config = configure_one_monokai,
 }
