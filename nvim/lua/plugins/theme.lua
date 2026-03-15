@@ -1,10 +1,20 @@
 -- Theme Configuration
 
--- Theme(s) List: Gruvbox Material, Monoglow, Everforest
--- Gruvbox: "sainnhe/gruvbox-material",
--- Monoglow: "wnkz/monoglow.nvim",
--- Everforest: "sainnhe/everforest",
+-- Theme(s) List: Oxocarbon, Gruvbox Material, Monoglow, Everforest, One Monokai
+-- Oxocarbon: "B4mbus/oxocarbon-lua.nvim"
+-- Gruvbox: "sainnhe/gruvbox-material"
+-- Monoglow: "wnkz/monoglow.nvim"
+-- Everforest: "sainnhe/everforest"
 -- One Monokai: "cpea2506/one_monokai.nvim"
+
+-- Oxocarbon setup
+local function configure_oxocarbon()
+    vim.opt.background = "dark" -- set this to dark or light
+    vim.cmd.colorscheme "oxocarbon-lua"
+    vim.g.oxocarbon_lua_transparent = false
+    vim.g.oxocarbon_lua_alternative_telescope = true
+    vim.g.oxocarbon_lua_disable_italic = true
+end
 
 -- Gruvbox Material setup
 local function configure_gruvbox()
@@ -45,8 +55,8 @@ local function configure_one_monokai()
 end
 
 return {
-    "sainnhe/gruvbox-material",
+    "B4mbus/oxocarbon-lua.nvim",
     lazy = false,
     priority = 1000,
-    config = configure_gruvbox,
+    config = configure_oxocarbon,
 }
