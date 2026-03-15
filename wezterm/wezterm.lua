@@ -5,8 +5,6 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.default_cursor_style = "SteadyBlock"
-
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
@@ -29,12 +27,12 @@ config.window_padding = {
 
 config.font_size = 10.5
 config.font = wezterm.font("FiraMono Nerd Font")
-config.color_scheme = 'GruvboxDarkHard'
+config.color_scheme = 'Panda (Gogh)'
 
 config.scrollback_lines = 10000
 config.window_background_opacity = 0.8
 config.macos_window_background_blur = 10
-config.win32_system_backdrop = "Acrylic"
+config.color_scheme = 'Oxocarbon Dark (Gogh)'
 
 config.default_prog = {
   "C:\\Windows\\System32\\wsl.exe",
