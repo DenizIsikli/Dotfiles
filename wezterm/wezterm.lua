@@ -32,7 +32,7 @@ config.color_scheme = 'Panda (Gogh)'
 config.scrollback_lines = 10000
 config.window_background_opacity = 0.8
 config.macos_window_background_blur = 10
-config.color_scheme = 'Oxocarbon Dark (Gogh)'
+config.color_scheme = 'Grayscale Dark (base16)'
 
 config.default_prog = {
   "C:\\Windows\\System32\\wsl.exe",
