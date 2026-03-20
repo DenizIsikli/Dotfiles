@@ -30,6 +30,15 @@ return {
                     enable_character_fade = true,
                 },
             },
+            event_handlers = {
+                {
+                    event = "neo_tree_buffer_enter",
+                    handler = function()
+                        vim.opt_local.number = true
+                        vim.opt_local.relativenumber = true
+                    end,
+                }
+            },
         })
 
         vim.g.nvim_tree_auto_open = 1
