@@ -1,26 +1,13 @@
 #!/bin/bash
-# To run the script: chmod +x deployLinux.sh && ./deployLinux.sh
+# deployLinux.sh
 
-# Source paths
-SOURCE_PATH="/home/deniz/.config/nvim"
-INIT_FILE="$SOURCE_PATH/init.lua"
-LUA_FOLDER="$SOURCE_PATH/lua"
-PACK_FOLDER="$SOURCE_PATH/pack"
+SOURCE="/home/deniz/.config/nvim"
+DEST="/home/deniz/Code/Dotfiles/nvim"
 
-# Destination paths
-DEST_PATH="/home/deniz/Code/Dotfiles/nvim"
+mkdir -p "$DEST"
 
-# Ensure the destination folder exists
-mkdir -p "$DEST_PATH"
-
-# Copy the init.lua file
-cp "$INIT_FILE" "$DEST_PATH"
-
-# Copy the lua folder
-cp -r "$LUA_FOLDER" "$DEST_PATH"
-
-# Copy the pack folder
-cp -r "$PACK_FOLDER" "$DEST_PATH"
+rsync -av --delete "$SOURCE/init.lua" "$DEST/"
+rsync -av --delete "$SOURCE/lua/" "$DEST/lua/"
+rsync -av --delete "$SOURCE/pack/" "$DEST/pack/"
 
 echo "Deployment completed"
-
