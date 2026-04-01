@@ -30,6 +30,7 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     'SmiteshP/nvim-navic',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
@@ -85,6 +86,19 @@ return {
         end
       end,
     })
+
+    -- Formatters
+    local ensure_installed = vim.deepcopy(servers)
+    vim.list_extend(ensure_installed, {
+      "stylua",
+      "prettier",
+      "prettierd",
+      "rustfmt",
+      "black",
+      "isort",
+      "clang-format",
+    })
+    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     -- Completion setup
     local cmp = require('cmp')
