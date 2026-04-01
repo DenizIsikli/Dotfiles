@@ -1,4 +1,3 @@
--- Autopairs Configuration
 return {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',

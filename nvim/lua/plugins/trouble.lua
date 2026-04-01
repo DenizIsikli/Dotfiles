@@ -1,4 +1,3 @@
--- Trouble Configuration
 return {
   "folke/trouble.nvim",
   opts = {},

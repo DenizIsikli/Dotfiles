@@ -1,4 +1,3 @@
--- Bufferline Configuration
 return {
   'akinsho/bufferline.nvim',
   version = "*",

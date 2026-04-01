@@ -1,4 +1,3 @@
--- Tiny-Inline-Diagnostic Configuration
 return {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",

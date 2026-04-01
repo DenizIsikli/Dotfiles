@@ -1,4 +1,3 @@
--- Statuscol Configuration
 return {
     "luukvbaal/statuscol.nvim",
     config = function()

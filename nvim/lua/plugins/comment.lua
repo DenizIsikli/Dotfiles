@@ -1,4 +1,3 @@
--- Comment Configuration
 return {
     "numToStr/Comment.nvim",
     config = function()

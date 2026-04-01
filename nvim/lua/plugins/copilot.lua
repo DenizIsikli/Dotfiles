@@ -1,4 +1,3 @@
--- Copilot Configuration
 return {
   "zbirenbaum/copilot.lua",
   event = "InsertEnter",

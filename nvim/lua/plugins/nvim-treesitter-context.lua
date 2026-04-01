@@ -1,4 +1,3 @@
--- Nvim-Treesitter-Context Configuration
 return {
     "nvim-treesitter/nvim-treesitter-context",
     event = 'BufReadPost',

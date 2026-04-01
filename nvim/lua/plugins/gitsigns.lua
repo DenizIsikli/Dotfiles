@@ -1,4 +1,3 @@
--- Git Configuration
 return {
     { "tpope/vim-fugitive" },
     {

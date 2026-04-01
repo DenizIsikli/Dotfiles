@@ -1,4 +1,3 @@
--- Flash Configuration
 return {
     "folke/flash.nvim",
     event = "VeryLazy",

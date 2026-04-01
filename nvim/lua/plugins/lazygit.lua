@@ -1,4 +1,3 @@
--- Lazygit Configuration
 return {
     -- Lazygit installation for Windows 10 or later (Winget): winget install -e --id=JesseDuffield.lazygit 
     -- Lazygit installation for Debian 12 (Bookworm): sudo apt install lazygit

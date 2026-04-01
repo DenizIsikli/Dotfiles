@@ -1,5 +1,3 @@
--- Theme Configuration
-
 -- Oxocarbon: "B4mbus/oxocarbon-lua.nvim"
 -- Gruvbox: "sainnhe/gruvbox-material"
 -- Monoglow: "wnkz/monoglow.nvim"
