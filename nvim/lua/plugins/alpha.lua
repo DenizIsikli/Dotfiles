@@ -1,84 +1,84 @@
 return {
-    'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-        local alpha = require('alpha')
-        local dashboard = require('alpha.themes.dashboard')
+	"goolord/alpha-nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		local alpha = require("alpha")
+		local dashboard = require("alpha.themes.dashboard")
 
-        local red_alpha = "#fb4934"
-        local green_alpha = "#53F665"
-        local miasma_alpha = "#5f875f"
+		local red_alpha = "#fb4934"
+		local green_alpha = "#53F665"
+		local miasma_alpha = "#5f875f"
 
-        -- Define custom highlight group for the header
-        vim.cmd([[
+		-- Define custom highlight group for the header
+		vim.cmd([[
             highlight AlphaHeader guifg=#FFFFFF
         ]])
 
-        -- Set header with custom highlight group
-        dashboard.section.header.opts.hl = 'AlphaHeader'
+		-- Set header with custom highlight group
+		dashboard.section.header.opts.hl = "AlphaHeader"
 
-        -- Set header
-        dashboard.section.header.val = {
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "                                   ",
-            "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
-            "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-            "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-            "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-            "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-            "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-            "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-            " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-            " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-            "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
-            "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
-            "                                   ",
-        }
+		-- Set header
+		dashboard.section.header.val = {
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"                                   ",
+			"   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+			"    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+			"          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+			"           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+			"          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+			"   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+			"  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+			" ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+			" ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
+			"      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
+			"       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+			"                                   ",
+		}
 
-        -- dashboard.section.header.val = vim.list_slice(dashboard.section.header.val, 7, 300)
+		-- dashboard.section.header.val = vim.list_slice(dashboard.section.header.val, 7, 300)
 
-        -- Set menu
-        dashboard.section.buttons.val = {
-            -- Directories
-            dashboard.button( "p", "  > Project Folder" , ":ProjectDir<CR>"),
-            dashboard.button( "c", "  > Config Folder", ":ConfigDir<CR>"),
+		-- Set menu
+		dashboard.section.buttons.val = {
+			-- Directories
+			dashboard.button("p", "  > Project Folder", ":ProjectDir<CR>"),
+			dashboard.button("c", "  > Config Folder", ":ConfigDir<CR>"),
 
-            -- Quit
-            dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
-        }
+			-- Quit
+			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+		}
 
-        dashboard.section.buttons.opts = {
-            position = "left",
-            align_shortcut = "left",
-            hl_shortcut = "Keyword",
-        }
+		dashboard.section.buttons.opts = {
+			position = "left",
+			align_shortcut = "left",
+			hl_shortcut = "Keyword",
+		}
 
-        -- Send config to alpha
-        alpha.setup(dashboard.opts)
+		-- Send config to alpha
+		alpha.setup(dashboard.opts)
 
-        -- Alpha Dashboard: Exit to Dashboard
-        vim.keymap.set("n", "<leader>fr", function()
-          local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-          for _, buf in ipairs(buffers) do
-            vim.cmd("bd! " .. buf.bufnr)
-          end
-          vim.cmd("Alpha")
-        end, { desc = "Close all buffers and go to Alpha dashboard" })
+		-- Alpha Dashboard: Exit to Dashboard
+		vim.keymap.set("n", "<leader>fr", function()
+			local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+			for _, buf in ipairs(buffers) do
+				vim.cmd("bd! " .. buf.bufnr)
+			end
+			vim.cmd("Alpha")
+		end, { desc = "Close all buffers and go to Alpha dashboard" })
 
-        -- Disable folding on alpha buffer
-        vim.cmd([[
+		-- Disable folding on alpha buffer
+		vim.cmd([[
             autocmd FileType alpha setlocal nofoldenable
         ]])
-    end,
+	end,
 }

@@ -1,48 +1,48 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
-    },
-    config = function()
-        require("neo-tree").setup({
-            enable_git_status = true,
-            enable_diagnostics = true,
-            filesystem = {
-                filtered_items = {
-                    visible = true,
-                    hide_dotfiles = false,
-                },
-            },
-            window  = {
-                position = "left",
-                width = 30,
-                mappings = {
-                    ["h"] = "open_vsplit",
-                    ["l"] = "open_split",
-                },
-            },
-            default_component_configs = {
-                container = {
-                    enable_character_fade = true,
-                },
-            },
-            event_handlers = {
-                {
-                    event = "neo_tree_buffer_enter",
-                    handler = function()
-                        vim.opt_local.number = true
-                        vim.opt_local.relativenumber = true
-                    end,
-                }
-            },
-        })
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
+	config = function()
+		require("neo-tree").setup({
+			enable_git_status = true,
+			enable_diagnostics = true,
+			filesystem = {
+				filtered_items = {
+					visible = true,
+					hide_dotfiles = false,
+				},
+			},
+			window = {
+				position = "left",
+				width = 30,
+				mappings = {
+					["h"] = "open_vsplit",
+					["l"] = "open_split",
+				},
+			},
+			default_component_configs = {
+				container = {
+					enable_character_fade = true,
+				},
+			},
+			event_handlers = {
+				{
+					event = "neo_tree_buffer_enter",
+					handler = function()
+						vim.opt_local.number = true
+						vim.opt_local.relativenumber = true
+					end,
+				},
+			},
+		})
 
-        vim.g.nvim_tree_auto_open = 1
-        vim.g.nvim_tree_indent_markers = 1
-        vim.api.nvim_set_keymap('n', '<C-t>', ':Neotree<CR>', { noremap = true })
-        vim.api.nvim_set_keymap('i', '<C-t>', ':Neotree<CR>', { noremap = true })
-    end,
+		vim.g.nvim_tree_auto_open = 1
+		vim.g.nvim_tree_indent_markers = 1
+		vim.api.nvim_set_keymap("n", "<C-t>", ":Neotree<CR>", { noremap = true })
+		vim.api.nvim_set_keymap("i", "<C-t>", ":Neotree<CR>", { noremap = true })
+	end,
 }

@@ -13,7 +13,7 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.laststatus = 3
-vim.o.foldcolumn = '1'
+vim.o.foldcolumn = "1"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -25,7 +25,7 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFFFFF", bold = true })
 
 -- Diagnostics
 vim.diagnostic.config({
-  severity_sort = true,
-  underline = true,
-  update_in_insert = true,
+	severity_sort = true,
+	underline = true,
+	update_in_insert = true,
 })
