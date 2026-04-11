@@ -26,6 +26,7 @@ require("lazy").setup({
 	require("plugins.lazygit"),
 	require("plugins.lsp"),
 	require("plugins.lualine"),
+	require("plugins.mdpreview"),
 	require("plugins.neotree"),
 	require("plugins.nvim-treesitter-context"),
 	require("plugins.oil"),
