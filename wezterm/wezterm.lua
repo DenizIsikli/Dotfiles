@@ -49,7 +49,7 @@ config.font = wezterm.font_with_fallback({
 config.color_scheme = "Panda (Gogh)"
 
 config.scrollback_lines = 10000
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1
 config.color_scheme = "Grayscale Dark (base16)"
 
 config.default_prog = {
