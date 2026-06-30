@@ -14,6 +14,7 @@ return {
 		-- Setup Telescope
 		telescope.setup({
 			defaults = {
+				dynamic_preview_title = true,
 				layout_config = {
 					prompt_position = "top",
 					horizontal = {
