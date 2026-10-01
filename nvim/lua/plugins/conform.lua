@@ -5,13 +5,28 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			rust = { "rustfmt" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
-			typescript = { "prettierd", "prettier", stop_after_first = true },
-			javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-			typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
 			json = { "prettier" },
 			html = { "prettier" },
 			css = { "prettier" },
+		},
+
+		formatters = {
+			prettier = {
+				prepend_args = {
+					"--print-width",
+					"120",
+					"--tab-width",
+					"4",
+					"--trailing-comma",
+					"all",
+					"--config-precedence",
+					"prefer-file",
+				},
+			},
 		},
 
 		format_on_save = function(bufnr)
@@ -22,7 +37,7 @@ return {
 			end
 
 			return {
-				timeout_ms = 500,
+				timeout_ms = 1000,
 				lsp_format = "fallback",
 			}
 		end,
