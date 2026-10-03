@@ -42,7 +42,8 @@ return {
 		}
 
 		local blank = "⠀"
-		local art_offset = 8
+		local x_art_offset = 8
+		local y_art_offset = 4
 
 		local function count_blank(line, from_end)
 			local n, len = 0, vim.fn.strchars(line)
@@ -65,14 +66,14 @@ return {
 					trail = math.min(trail, (count_blank(line, true)))
 				end
 			end
-			local pad = string.rep(blank, math.abs(art_offset))
+			local pad = string.rep(blank, math.abs(x_art_offset))
 			local out = {}
 			for _, line in ipairs(lines) do
 				local len = vim.fn.strchars(line)
 				local trimmed = vim.fn.strcharpart(line, lead, math.max(len - lead - trail, 0))
-				if art_offset > 0 then
+				if x_art_offset > 0 then
 					trimmed = pad .. trimmed
-				elseif art_offset < 0 then
+				elseif x_art_offset < 0 then
 					trimmed = trimmed .. pad
 				end
 				table.insert(out, trimmed)
@@ -149,7 +150,7 @@ return {
 		}
 
 		dashboard.opts.layout = {
-			{ type = "padding", val = 2 },
+			{ type = "padding", val = math.max(2 + y_art_offset, 0) },
 			dashboard.section.header,
 			{ type = "padding", val = 2 },
 			section_title("Recent projects"),
