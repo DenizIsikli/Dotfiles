@@ -22,6 +22,7 @@ vim.g.have_nerd_font = true
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#928374" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFFFFF", bold = true })
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 -- Diagnostics
 vim.diagnostic.config({
