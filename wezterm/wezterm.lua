@@ -52,14 +52,3 @@ config.scrollback_lines = 10000
 config.window_background_opacity = 1
 config.color_scheme = "Grayscale Dark (base16)"
 
-config.default_prog = {
-	"C:\\Windows\\System32\\wsl.exe",
-	"-d",
-	"Debian",
-	"-e",
-	"tmux",
-}
-
-config.front_end = "WebGpu"
-
-return config
