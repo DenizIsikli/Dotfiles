@@ -129,7 +129,6 @@ return {
 			"stylua",
 			"prettier",
 			"prettierd",
-			"rustfmt",
 			"black",
 			"isort",
 			"clang-format",

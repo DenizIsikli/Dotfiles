@@ -7,7 +7,6 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff_organize_imports", "ruff_format" },
-			rust = { "rustfmt" },
 			go = { "goimports", "gofumpt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
