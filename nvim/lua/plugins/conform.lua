@@ -50,7 +50,7 @@ return {
 		},
 		format_on_save = function(bufnr)
 			local filepath = vim.api.nvim_buf_get_name(bufnr)
-			if filepath:match("/Codeforces/") or filepath:match("/LeetCode") then
+			if filepath:match("/Codeforces/") or filepath:match("/LeetCode") or filepath:match("/CSES/") then
 				return nil
 			end
 			return {
