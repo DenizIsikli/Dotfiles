@@ -52,3 +52,8 @@ config.scrollback_lines = 10000
 config.window_background_opacity = 1
 config.color_scheme = "Grayscale Dark (base16)"
 
+config.default_prog = { "tmux" }
+
+config.front_end = "WebGpu"
+
+return config
