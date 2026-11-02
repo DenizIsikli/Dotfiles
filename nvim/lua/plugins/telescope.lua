@@ -1,15 +1,41 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.6",
+	branch = "master",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	config = function()
 		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+		local action_state = require("telescope.actions.state")
 
-		-- Load extensions
-		telescope.load_extension("ui-select")
+		-- Open the selected file, or jump to its window if it's already open
+		local function open_or_switch(prompt_bufnr)
+			local entry = action_state.get_selected_entry()
+			if not entry then
+				return -- nothing selected (e.g. empty results), do nothing
+			end
+
+			local filepath = entry.path or entry.filename
+			actions.close(prompt_bufnr)
+
+			for _, win in ipairs(vim.api.nvim_list_wins()) do
+				local win_buf = vim.api.nvim_win_get_buf(win)
+				if vim.api.nvim_buf_get_name(win_buf) == filepath then
+					vim.api.nvim_set_current_win(win)
+					return
+				end
+			end
+
+			vim.cmd("edit " .. vim.fn.fnameescape(filepath))
+		end
+
+		local function attach_open_or_switch(_, map)
+			map("i", "<CR>", open_or_switch)
+			map("n", "<CR>", open_or_switch)
+			return true
+		end
 
 		-- Setup Telescope
 		telescope.setup({
@@ -56,8 +82,8 @@ return {
 						["<C-t>"] = "select_tab", -- Open in new tab
 						["<C-k>"] = "move_selection_previous", -- Move selection up
 						["<C-j>"] = "move_selection_next", -- Move selection down
-						["<C-u>"] = require("telescope.actions").preview_scrolling_up, -- Scroll up in preview
-						["<C-d>"] = require("telescope.actions").preview_scrolling_down, -- Scroll down in preview
+						["<C-u>"] = actions.preview_scrolling_up, -- Scroll up in preview
+						["<C-d>"] = actions.preview_scrolling_down, -- Scroll down in preview
 					},
 				},
 			},
@@ -65,61 +91,16 @@ return {
 				find_files = {
 					hidden = true,
 					find_command = { "fdfind", "--type", "f", "--hidden", "--color", "never" },
-					attach_mappings = function(_, map)
-						local actions = require("telescope.actions")
-						local action_state = require("telescope.actions.state")
-
-						local open_or_switch = function(prompt_bufnr)
-							local entry = action_state.get_selected_entry()
-							local filepath = entry.path or entry.filename
-							actions.close(prompt_bufnr)
-
-							for _, win in ipairs(vim.api.nvim_list_wins()) do
-								local win_buf = vim.api.nvim_win_get_buf(win)
-								if vim.api.nvim_buf_get_name(win_buf) == filepath then
-									vim.api.nvim_set_current_win(win)
-									return
-								end
-							end
-
-							vim.cmd("edit " .. vim.fn.fnameescape(filepath))
-						end
-
-						map("i", "<CR>", open_or_switch)
-						map("n", "<CR>", open_or_switch)
-						return true
-					end,
+					attach_mappings = attach_open_or_switch,
 				},
 				oldfiles = {
-					hidden = true,
-					find_command = { "fdfind", "--type", "f", "--hidden", "--color", "never" },
-					attach_mappings = function(_, map)
-						local actions = require("telescope.actions")
-						local action_state = require("telescope.actions.state")
-
-						local open_or_switch = function(prompt_bufnr)
-							local entry = action_state.get_selected_entry()
-							local filepath = entry.path or entry.filename
-							actions.close(prompt_bufnr)
-
-							for _, win in ipairs(vim.api.nvim_list_wins()) do
-								local win_buf = vim.api.nvim_win_get_buf(win)
-								if vim.api.nvim_buf_get_name(win_buf) == filepath then
-									vim.api.nvim_set_current_win(win)
-									return
-								end
-							end
-
-							vim.cmd("edit " .. vim.fn.fnameescape(filepath))
-						end
-
-						map("i", "<CR>", open_or_switch)
-						map("n", "<CR>", open_or_switch)
-						return true
-					end,
+					attach_mappings = attach_open_or_switch,
 				},
 			},
 		})
+
+		-- Load extensions (after setup so their config applies)
+		telescope.load_extension("ui-select")
 
 		-- Keymaps
 		vim.api.nvim_set_keymap("n", "<leader>3", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true })
