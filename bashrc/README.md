@@ -1,4 +1,4 @@
-# Linux Dev Environment Setup (Parrot OS)
+# Linux Dev Environment Setup (Debian OS)
 
 ## Bash Custom Configuration
 
@@ -25,17 +25,3 @@ if [ -d "$CF_DIR" ]; then
   alias runcf="$CF_DIR/compile_n_run.sh"
 fi
 ```
-
-## Dotfiles
-
-Configs are symlinked from this repo, so no deploy/sync scripts are needed:
-
-```bash
-ln -s ~/Code/Dotfiles/nvim ~/.config/nvim
-```
-
-## Notes
-
-- `cd ~` removed: terminals already start in home, and it broke "open terminal here".
-- SSH agent block removed: KDE starts an SSH agent at login.
-- Nvim config-manager and git deploy script removed: replaced by symlinks.
