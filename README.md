@@ -1,6 +1,6 @@
 # Dotfiles
 
-A personal collection of configuration files for Neovim, Alacritty, and Tmux.
+A personal collection of configuration files for Neovim, WezTerm, Tmux, and a Debian/GNOME desktop.
 
 <div align="center">
   <img src="misc/images/DotfilesRepoReadmePic.jpg" alt="Repository Preview" width="300">
@@ -13,6 +13,7 @@ A personal collection of configuration files for Neovim, Alacritty, and Tmux.
 - `alacritty/`: Configuration files for Alacritty across Linux, Windows, and WSL
 - `autohotkey/`: AutoHotkey scripts for symbols in Alacritty and WSL
 - `bashrc/`: Bash configuration files
+- `debian/`: Debian setup and the Mono GNOME theme
 - `firefox/`: Firefox configuration and customization
 - `git/`: Git configuration files
 - `misc/`: Miscellaneous resources and files
@@ -20,11 +21,11 @@ A personal collection of configuration files for Neovim, Alacritty, and Tmux.
 - `tmux/`: Tmux configuration
 - `wallpapers/`: Collection of wallpapers
 - `wezterm/`: WezTerm configuration
-- `wsl/`: Bash scripts for setting up a fresh WSL environment
 
 #### Additional Documentation
 
-- `wsl/README.md`: Automated setup script for a development environment
+- `debian/README.md`: Packages, NVIDIA driver, and symlinks for a fresh Debian install
+- `debian/Mono/`: Black and white GNOME Shell theme and GTK4 color overrides
 - `nvim/CustomKeymaps.md`: Overview of custom Neovim keymaps
 - `nvim/alpha-dashboard.lua`: ASCII art collection for alpha-nvim
 - `NeovimCheatsheet.md`: Curated list of shortcuts and commands for efficient Neovim usage
