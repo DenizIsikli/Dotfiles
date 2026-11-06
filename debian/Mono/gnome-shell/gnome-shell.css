@@ -1,0 +1,33 @@
+@import url("resource:///org/gnome/shell/theme/gnome-shell-dark.css");
+
+#overviewGroup {
+  background-color: #000000;
+}
+
+.dash-background {
+  background-color: #000000;
+}
+
+#dash .dash-item-container .show-apps .overview-icon,
+#dash .dash-item-container .overview-tile .overview-icon {
+  background-color: transparent;
+  padding: 4px;
+}
+
+#dash .dash-item-container .show-apps:hover .overview-icon,
+#dash .dash-item-container .overview-tile:hover .overview-icon,
+#dash .dash-item-container .show-apps:checked .overview-icon,
+#dash .dash-item-container .overview-tile:checked .overview-icon {
+  background-color: #1a1a1a;
+}
+
+#dash .dash-item-container .show-apps:active .overview-icon,
+#dash .dash-item-container .overview-tile:active .overview-icon {
+  background-color: #262626;
+}
+
+#dash .dash-item-container .show-apps,
+#dash .dash-item-container .overview-tile {
+  margin: 0 1px;
+  padding-bottom: 8px;
+}
