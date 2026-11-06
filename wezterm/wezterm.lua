@@ -23,7 +23,7 @@ end)
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.check_for_updates = false
 
 config.use_fancy_tab_bar = false
