@@ -90,7 +90,7 @@ return {
 			pickers = {
 				find_files = {
 					hidden = true,
-					find_command = { "fdfind", "--type", "f", "--hidden", "--color", "never" },
+					find_command = { "fdfind", "--type", "f", "--hidden", "--no-ignore-vcs", "--color", "never" },
 					attach_mappings = attach_open_or_switch,
 				},
 				oldfiles = {
